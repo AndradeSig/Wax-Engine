@@ -1,2 +1,2 @@
 # Wax Engine
-💫 A simple, and fast Java libary for games.
+💫 A simple, and fast Game Engine for Java.
