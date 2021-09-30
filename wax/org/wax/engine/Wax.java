@@ -1,6 +1,7 @@
 package org.wax.engine;
 
 import org.lwjgl.glfw.GLFW;
+import org.wax.engine.IO.WaxUtils;
 import org.wax.engine.IO.WaxWindow;
 import org.wax.engine.staticConfigs.Input;
 import org.wax.engine.times.Time;
@@ -8,8 +9,8 @@ import org.wax.engine.times.Time;
 public class Wax {
 
     //  --------------------- OBJECTS ---------------------
-    public static Time time = new Time();
-    public static Input input = new Input();
+    public static Time time         = new Time();
+    public static Input input       = new Input();
 
     // --------------------- FOR INPUTS ---------------------
 

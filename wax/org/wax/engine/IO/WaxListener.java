@@ -18,6 +18,10 @@ public class WaxListener{
             target.update();
             target.draw();
         }
+    }
+
+    public void terminate(WaxWindow window)
+    {
         window.destroy();
     }
 }

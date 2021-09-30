@@ -60,7 +60,7 @@ public class WaxWindow {
     {
         GL11.glEnable(GL11.GL_DEPTH_TEST);
         GL11.glClearColor(r, g, b, 1.0f);
-        GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
+        GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
     }
 
     public void swap()
