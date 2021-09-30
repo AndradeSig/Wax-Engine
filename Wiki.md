@@ -2,9 +2,9 @@
 ## 🔅 Wax
 A classe `Wax` pode ser considerada a principal da Engine? Talvez! Porém com está classe, você tem acessos a alguns objetos e funções muito importantes.
 ```java
-Wax.time    -> Objeto que gerencia o tempo do seu aplicativo ( mais informações detalhadas na explicação desta Classe )
+Wax.time    -> Objeto que gerencia o tempo do seu aplicativo (mais informações detalhadas na explicação desta Classe)
 Wax.inputs  -> Objeto que armazena e guarda as informações 
-               de todos os inputs do nosso aplicativo ( Como teclas, bot
+               de todos os inputs do nosso aplicativo (Como teclas, botões do mouse e etc)
 
 keyPressed(WaxWindow window, int key)   -> Verifica se uma tecla foi pressionada na Janela escolhida
 keyReleased(WaxWindow window, int key)  -> Verifica se uma tecla foi solta na Janela escolhida
