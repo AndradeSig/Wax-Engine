@@ -88,4 +88,4 @@ setColor(Vector3f color, int program, String location) -> Sets a color to some o
 setMat4(Matrix4f mat, int program, String location)    -> Sets a 4-coordinate matrix to an object
                                                           that has a shader
 ```
-NOTE: Deeper use of Shader is recommended for those already familiar with computer graphics and OpenGL.
+NOTE: Deeper use of Shader is recommended for those already familiar with computer graphics or OpenGL.
