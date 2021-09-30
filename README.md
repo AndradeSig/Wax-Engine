@@ -63,6 +63,13 @@ A classe `WaxWindow` é a classe que terá o funcionamento da Janela.
 2º Argumento: Largura da Janela
 3º Argumento: Altura da Janela
 ```
+Funções
+```java
+initialize()	-> Serve para inicializar a Janela e setar as configurações dela
+poll()		-> Serve para atualizar os eventos da Janela
+clearColor()	-> Serve para limpar a tela com as cores "R G B" ( lembreando que a WaxEngine trabalha com coordenadas normalizadas, e por isso vai de 0.0 a 1.0 )
+swap()		-> Serve para fazer a swap dos buffers na tela
+
 #
 A classe `WaxListener` é a classe que fará a comunicação e facilitará o processo do GameLoop do nosso jogo/aplicativo.
 ```java
