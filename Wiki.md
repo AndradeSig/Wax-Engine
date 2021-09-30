@@ -1,4 +1,4 @@
-# Simple
+# Engine
 ## 🔅 Wax
 Can the `Wax` class be considered the main engine? Perhaps! But with this class, you have access to very important objects and functions.
 ```java
