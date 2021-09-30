@@ -10,14 +10,44 @@ Yes! It's pretty easy, with a little reading you'll understand WaxEngine and you
 # Wiki
 📒 WaxEngine Basic Wiki
 <br/>
-### Creating a Window
-To get started, we need to know how to create a Window. And for that, WaxEngine provides us with a special Class for that!
-The `WaxWindow` is for you to create and manipulate the window freely, in a simple and easy to understand way.
-To create our Window, we need to create a variable that will be our object:
-```public static WaxWindow window;```
-No need to leave static, I prefer it this way :)
+### First application with WaxEngine
+Para começarmos, vamos criar nossa classe com o nome `Main` que será a classe principal do nosso jogo.
+<br/>
+```java
+public class Main implements WaxModel{
+	
+	public static WaxWindow window;
+	public static WaxListener listener;
 
-After that, let's create and set some default Window properties in our main class constructor where the Window object will be stored:
-```window = new WaxWindow("My first program with WaxEngine!", 800, 600);```
+	public Main(){
+		window = new WaxWindow("My first app with WaxEngine!", 800, 600);
+		listener = new WaxListener();
+
+		listener.toListener(this);
+	}
+
+	@Override
+	public void start(){
+		window.initialize();
+	}
+
+	@Override
+	public void update(){
+		window.poll();
+	}
+	
+	@Override
+	public void draw(){
+		window.clearColor(1.0f, 0.0f, 0.0f);
+		window.swap();
+	}
+	
+	public static void main(String[] args){
+		new Main();
+		listener.run(window);
+		listener.terminate(window);
+	}
+}
+```
 
 
