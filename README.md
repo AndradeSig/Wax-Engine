@@ -44,8 +44,8 @@ public class Main implements WaxModel {
 
     public static void main(String[] args) {
         new Main();
-        listener.run (window);
-        listener.terminate (window);
+        listener.run(window);
+        listener.terminate(window);
     }
 }
 ```
@@ -67,7 +67,7 @@ Functions
 ```java
 initialize ()   -> Is work to initialize a window and configure its settings
 poll()          -> Is work to update Window events
-clearColor()    -> Is work to clear the screen with "RG B" cores (remembering that WaxEngine works with normalized coordinates, and so it goes from 0.0 to 1.0)
+clearColor()    -> Is work to clear the screen with "RGB" colors (remembering that WaxEngine works with normalized coordinates, and so it goes from 0.0 to 1.0)
 swap()          -> Is work to swap the buffers on the screen
 ```
 #
