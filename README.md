@@ -13,7 +13,7 @@ Yes! It's pretty easy, with a little reading you'll understand WaxEngine and you
 ### 🎮 First application with WaxEngine 🎮
 To start, let's create our class named `Main` which will be the main class of our application.
 <br/>
-`` `java
+```java
 public class Main implements WaxModel {
 
 public static WaxWindow window;
@@ -26,17 +26,17 @@ listener = new WaxListener();
 listener.toListener(this);
 }
 
-@Overwrite
+@Override
 public void start() {
 window.initialize();
 }
 
-@Overwrite
+@Override
 public void update() {
 window.poll();
 }
 
-@Overwrite
+@Override
 public void draw() {
 window.clearColor(1.0f, 0.0f, 0.0f);
 window.swap();
@@ -48,17 +48,17 @@ listener.run (window);
 listener.terminate (window);
 }
 }
-`` `
+```
 The `WaxModel` implement is an interface that contains the main functions for running the game.
-`` `java
+```java
 to start();
 update();
 draw();
-`` `
+```
 Note: You must implement this interface if you are going to use a `WaxListener`
 #
 The `WaxWindow` class is a class that will have the working of the Window.
-`` `java
+```java
 1st Argument: Window Title
 2nd Argument: Window Width
 3rd Argument: Window Height
@@ -69,13 +69,13 @@ initialize () -> Serve to initialize a window and configure its settings
 poll() -> Serve to update Window events
 clearColor() -> Serve to clear the screen with "RG B" cores (remembering that WaxEngine works with normalized coordinates, and so it goes from 0.0 to 1.0)
 swap() -> Serve to swap the buffers on the screen
-`` `
+```
 #
 The `WaxListener` class is a class that will communicate and facilitate the GameLoop process of our game / application.
-`` `java
+```java
 toListener() -> indicates a binding of the "WaxModel" interface with its methods to the Listener.
 run() -> serves to run the GameLoop in the current window.
 terminate() -> will terminate and delete a window when closed.
-`` `
+```
 Remember: It is only recommended to use a `WaxListener` when creating a simple project, as a `WaxListener` doesn't work with Threads (yet).
 
