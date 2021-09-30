@@ -11,7 +11,7 @@ Yes! It's pretty easy, with a little reading you'll understand WaxEngine and you
 📒 WaxEngine Basic Wiki
 <br/>
 ### 🎮 First application with WaxEngine 🎮
-Para começarmos, vamos criar nossa classe com o nome `Main` que será a classe principal do nosso jogo.
+Para começarmos, vamos criar nossa classe com o nome `Main` que será a classe principal do nosso aplicativo.
 <br/>
 ```java
 public class Main implements WaxModel{
@@ -53,10 +53,9 @@ O implemento `WaxModel` é uma Interface que contém as principais funções par
 - start
 - update
 - draw
-#
+<br/>
 Note: É obrigatório implementar esta interface caso você for usar a `WaxListener`
-<br/>
-<br/>
+#
 A classe `WaxWindow` é a classe que terá o funcionamento da Janela.
 - 1º Argumento: Título da Janela
 - 2º Argumento: Largura da Janela
