@@ -9,4 +9,5 @@ The WaxEngine was created to facilitate your process in creating a game, so that
 Yes! It's pretty easy, with a little reading you'll understand WaxEngine and you'll be able to create your games freely 😄
 # Wiki
 📒 [(WaxEngine Wiki)](https://github.com/AndradeSig/WaxEngine/blob/master/First_Program_Readme.md)
+<br/>
 🎮 [(Simple application with WaxEngine)](https://github.com/AndradeSig/WaxEngine/blob/master/First_Program_Readme.md)
