@@ -16,37 +16,37 @@ To start, let's create our class named `Main` which will be the main class of ou
 ```java
 public class Main implements WaxModel {
 
-public static WaxWindow window;
-static public listener WaxListener;
+    public static WaxWindow window;
+    public static listener WaxListener;
 
-public Main () {
-window = new WaxWindow ("My first app with WaxEngine!", 800, 600);
-listener = new WaxListener();
+    public Main () {
+        window = new WaxWindow ("My first app with WaxEngine!", 800, 600);
+        listener = new WaxListener();
 
-listener.toListener(this);
-}
+        listener.toListener(this);
+    }
 
-@Override
-public void start() {
-window.initialize();
-}
+    @Override
+    public void start() {
+        window.initialize();
+    }
 
-@Override
-public void update() {
-window.poll();
-}
+    @Override
+    public void update() {
+        window.poll();
+    }
 
-@Override
-public void draw() {
-window.clearColor(1.0f, 0.0f, 0.0f);
-window.swap();
-}
+    @Override
+    public void draw() {
+        window.clearColor(1.0f, 0.0f, 0.0f);
+        window.swap();
+    }
 
-public static void main(String[] args) {
-new Main();
-listener.run (window);
-listener.terminate (window);
-}
+    public static void main(String[] args) {
+        new Main();
+        listener.run (window);
+        listener.terminate (window);
+    }
 }
 ```
 The `WaxModel` implement is an interface that contains the main functions for running the game.
