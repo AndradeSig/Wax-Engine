@@ -6,8 +6,8 @@ Wax.time -> Object that manages your application time (more detailed information
 Wax.inputs -> Object that stores and stores information
               of all inputs from our application (Like keys, mouse buttons, etc.)
 
-Wax.keyPressed(WaxWindow window, int key) -> Checks if a key was pressed in the chosen Window
-Wax.keyReleased(WaxWindow window, int key) -> Checks if a key was released in the chosen Window
+Wax.keyPressed(WaxWindow window, int key)   -> Checks if a key was pressed in the chosen Window
+Wax.keyReleased(WaxWindow window, int key)  -> Checks if a key was released in the chosen Window
 ```
 
 # I/O
