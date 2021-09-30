@@ -7,7 +7,7 @@ Wax.input   -> Pega o objeto "Input" criado na classe "Wax" e você tem acesso a
 
 keyPressed(WaxWindow window, int key)   -> Verifica se uma tecla foi pressionada na Janela escolhida
 keyReleased(WaxWindow window, int key)  -> Verifica se uma tecla foi solta na Janela escolhida
-
+```
 
 # I/O
 ## 🖥️ WaxWindow
