@@ -9,7 +9,7 @@ swap()                 -> Faz a swap dos buffers da Janela para a renderização
 destroy()              -> Faz a destruição da Janela
 
 setVsync(true or false)       -> Habilita ou Desabilita a opção de Vsync
-setClosed(true or false)      -> Habilita ou Desabilita o estado de fechado e aberto da Janela ( Não precisa colocar false )
+setClosed(true or false)      -> Habilita ou Desabilita o estado de fechado e aberto da Janela
 setFullscreen(true or false)  -> Habilita ou Desabilita a opção de Tela Cheia da Janela
 
 isOpen()            -> Verifica se a Janela está aberta
