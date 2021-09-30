@@ -8,7 +8,13 @@ import org.wax.engine.times.Time;
 
 public class Wax {
 
-    //  --------------------- OBJECTS ---------------------
+    //  -------------------- VARIABLES ----------------------
+
+    public static int STATIC    = 0x88E4;
+    public static int DYNAMIC   = 0x88E8;
+    public static int RGBA      = 4;
+
+    //  --------------------- OBJECTS -----------------------
     public static Time time         = new Time();
     public static Input input       = new Input();
 

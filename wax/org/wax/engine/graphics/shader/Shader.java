@@ -1,16 +1,15 @@
 package org.wax.engine.graphics.shader;
 
+import org.joml.Matrix4f;
 import org.joml.Vector3f;
 import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
-import org.wax.engine.Wax;
+import org.lwjgl.system.MemoryStack;
+
+import java.nio.FloatBuffer;
 
 public class Shader {
-
-    public static int STATIC    = GL15.GL_STATIC_DRAW;
-    public static int DYNAMIC   = GL15.GL_DYNAMIC_DRAW;
 
     private int _V_SHADER, _F_SHADER;
     private int _S_PROGRAM;
@@ -65,5 +64,24 @@ public class Shader {
     public static void setColor(Vector3f color, int program, String location)
     {
         GL20.glUniform3f(GL20.glGetUniformLocation(program, location), color.x, color.y, color.z);
+    }
+
+    public static void setColor(float r, float g, float b, int program, String location)
+    {
+        GL20.glUniform3f(GL20.glGetUniformLocation(program, location), r, g, b);
+    }
+
+    public static void setMat4(Matrix4f mat, int program, String location)
+    {
+        try(MemoryStack stack = MemoryStack.stackPush()){
+            FloatBuffer fMatBuffer = stack.mallocFloat(16);
+            mat.get(fMatBuffer);
+            GL20.glUniformMatrix4fv(GL20.glGetUniformLocation(program, location), false, fMatBuffer);
+        }
+    }
+
+    public static void enableTexture(int index, int program, String location)
+    {
+        GL20.glUniform1i(GL20.glGetUniformLocation(program, location), index);
     }
 }
