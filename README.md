@@ -11,4 +11,4 @@ Yes! It's pretty easy, with a little reading you'll understand WaxEngine and you
 📒 WaxEngine Basic Wiki
 
 ### More of Contents
-🎮 [(First program with WaxEngine)](https://github.com/AndradeSig/WaxEngine/blob/master/First_Program_Readme.md)
+🎮 [(Simple application with WaxEngine)](https://github.com/AndradeSig/WaxEngine/blob/master/First_Program_Readme.md)
