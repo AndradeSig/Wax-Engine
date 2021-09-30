@@ -67,9 +67,9 @@ Funções
 ```java
 initialize()	-> Serve para inicializar a Janela e setar as configurações dela
 poll()		-> Serve para atualizar os eventos da Janela
-clearColor()	-> Serve para limpar a tela com as cores "R G B" ( lembreando que a WaxEngine trabalha com coordenadas normalizadas, e por isso vai de 0.0 a 1.0 )
+clearColor()	-> Serve para limpar a tela com as cores "R G B" ( lembrando que a WaxEngine trabalha com coordenadas normalizadas, e por isso vai de 0.0 a 1.0 )
 swap()		-> Serve para fazer a swap dos buffers na tela
-
+```
 #
 A classe `WaxListener` é a classe que fará a comunicação e facilitará o processo do GameLoop do nosso jogo/aplicativo.
 ```java
@@ -77,3 +77,4 @@ toListener() 	-> indica a linkagem da interface "WaxModel" com os seus métodos 
 run() 		-> serve para rodar o GameLoop na janela atual.
 terminate() 	-> irá finalizar e deletar a Janela quando fechada.
 ```
+Lembre-se: Só é recomendado utilizar a `WaxListener` quando for criar um projeto simples, por conta que a `WaxListener` não trabalha com Thread ( ainda ).
