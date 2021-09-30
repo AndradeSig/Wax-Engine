@@ -11,70 +11,71 @@ Yes! It's pretty easy, with a little reading you'll understand WaxEngine and you
 📒 WaxEngine Basic Wiki
 <br/>
 ### 🎮 First application with WaxEngine 🎮
-Para começarmos, vamos criar nossa classe com o nome `Main` que será a classe principal do nosso aplicativo.
+To start, let's create our class named `Main` which will be the main class of our application.
 <br/>
-```java
-public class Main implements WaxModel{
-	
-	public static WaxWindow window;
-	public static WaxListener listener;
+`` `java
+public class Main implements WaxModel {
 
-	public Main(){
-	    window = new WaxWindow("My first app with WaxEngine!", 800, 600);
-	    listener = new WaxListener();
+public static WaxWindow window;
+static public listener WaxListener;
 
-	    listener.toListener(this);
-	}
+public Main () {
+window = new WaxWindow ("My first app with WaxEngine!", 800, 600);
+listener = new WaxListener();
 
-	@Override
-	public void start(){
-	    window.initialize();
-	}
-
-	@Override
-	public void update(){
-	    window.poll();
-	} 
-	
-	@Override
-	public void draw(){
-	    window.clearColor(1.0f, 0.0f, 0.0f);
-	    window.swap();
-	}
-	
-	public static void main(String[] args){
-	    new Main();
-	    listener.run(window);
-	    listener.terminate(window);
-	}
+listener.toListener(this);
 }
-```
-O implemento `WaxModel` é uma Interface que contém as principais funções para o funcionamento do Game.
-```java
-start();
+
+@Overwrite
+public void start() {
+window.initialize();
+}
+
+@Overwrite
+public void update() {
+window.poll();
+}
+
+@Overwrite
+public void draw() {
+window.clearColor(1.0f, 0.0f, 0.0f);
+window.swap();
+}
+
+public static void main(String[] args) {
+new Main();
+listener.run (window);
+listener.terminate (window);
+}
+}
+`` `
+The `WaxModel` implement is an interface that contains the main functions for running the game.
+`` `java
+to start();
 update();
 draw();
-```
-Note: É obrigatório implementar esta interface caso você for usar a `WaxListener`
+`` `
+Note: You must implement this interface if you are going to use a `WaxListener`
 #
-A classe `WaxWindow` é a classe que terá o funcionamento da Janela.
-```java
-1º Argumento: Título da Janela
-2º Argumento: Largura da Janela
-3º Argumento: Altura da Janela
-```
-Funções
-```java
-initialize()	-> Serve para inicializar a Janela e setar as configurações dela
-poll()		-> Serve para atualizar os eventos da Janela
-clearColor()	-> Serve para limpar a tela com as cores "R G B" ( lembrando que a WaxEngine trabalha com coordenadas normalizadas, e por isso vai de 0.0 a 1.0 )
-swap()		-> Serve para fazer a swap dos buffers na tela
-```
+The `WaxWindow` class is a class that will have the working of the Window.
+`` `java
+1st Argument: Window Title
+2nd Argument: Window Width
+3rd Argument: Window Height
+`` `
+Roles
+`` `java
+initialize () -> Serve to initialize a window and configure its settings
+poll() -> Serve to update Window events
+clearColor() -> Serve to clear the screen with "RG B" cores (remembering that WaxEngine works with normalized coordinates, and so it goes from 0.0 to 1.0)
+swap() -> Serve to swap the buffers on the screen
+`` `
 #
-A classe `WaxListener` é a classe que fará a comunicação e facilitará o processo do GameLoop do nosso jogo/aplicativo.
-```java
-toListener() 	-> indica a linkagem da interface "WaxModel" com os seus métodos ao Listener.
-run() 		-> serve para rodar o GameLoop na janela atual.
-terminate() 	-> irá finalizar e deletar a Janela quando fechada.
-```
-Lembre-se: Só é recomendado utilizar a `WaxListener` quando for criar um projeto simples, por conta que a `WaxListener` não trabalha com Threads ( ainda ).
+The `WaxListener` class is a class that will communicate and facilitate the GameLoop process of our game / application.
+`` `java
+toListener() -> indicates a binding of the "WaxModel" interface with its methods to the Listener.
+run() -> serves to run the GameLoop in the current window.
+terminate() -> will terminate and delete a window when closed.
+`` `
+Remember: It is only recommended to use a `WaxListener` when creating a simple project, as a `WaxListener` doesn't work with Threads (yet).
+
