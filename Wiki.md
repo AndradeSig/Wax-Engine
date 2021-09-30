@@ -25,4 +25,5 @@ A classe `WaxListener` faz a comunicação e o gerenciamento do GameLoop do noss
 toListener(WaxModel target)     -> Faz a linkagem de uma interface "WaxModel" para o Listener
 run(WaxWindow window)           -> Roda o GameLoop, executando as funções do "WaxModel" 
                                    e recebendo a Janela em que queremos rodar o Loop como parametro
+                                   
 terminate(WaxWindow window)     -> Finaliza o Loop e sua janela, destruindo-a
