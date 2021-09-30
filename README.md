@@ -51,7 +51,7 @@ public class Main implements WaxModel {
 ```
 The `WaxModel` implement is an interface that contains the main functions for running the game.
 ```java
-to start();
+start();
 update();
 draw();
 ```
@@ -62,20 +62,20 @@ The `WaxWindow` class is a class that will have the working of the Window.
 1st Argument: Window Title
 2nd Argument: Window Width
 3rd Argument: Window Height
-`` `
-Roles
-`` `java
-initialize () -> Serve to initialize a window and configure its settings
-poll() -> Serve to update Window events
-clearColor() -> Serve to clear the screen with "RG B" cores (remembering that WaxEngine works with normalized coordinates, and so it goes from 0.0 to 1.0)
-swap() -> Serve to swap the buffers on the screen
+```
+Functions
+```java
+initialize ()   -> Is work to initialize a window and configure its settings
+poll()          -> Is work to update Window events
+clearColor()    -> Is work to clear the screen with "RG B" cores (remembering that WaxEngine works with normalized coordinates, and so it goes from 0.0 to 1.0)
+swap()          -> Is work to swap the buffers on the screen
 ```
 #
 The `WaxListener` class is a class that will communicate and facilitate the GameLoop process of our game / application.
 ```java
-toListener() -> indicates a binding of the "WaxModel" interface with its methods to the Listener.
-run() -> serves to run the GameLoop in the current window.
-terminate() -> will terminate and delete a window when closed.
+toListener()    -> Indicates a binding of the "WaxModel" interface with its methods to the Listener.
+run()           -> Is work to run the GameLoop in the current window.
+terminate()     -> will terminate and delete a window when closed.
 ```
 Remember: It is only recommended to use a `WaxListener` when creating a simple project, as a `WaxListener` doesn't work with Threads (yet).
 
