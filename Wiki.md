@@ -10,7 +10,7 @@ destroy()                     -> Destroy the Window
 
 setVsync(true or false)       -> Enable or Disable the Vsync option
 setClosed(true or false)      -> Enables or Disables the Window closed and open state
-setFullscreen(true or false)  -> Enable or Disable Window's Full Screen option
+setFullscreen(true or false)  -> Enable or Disable Window FullScreen option
 
 isOpen()                      -> Check if the Window is open
 isFullscreen()                -> Check if Window is full screen
