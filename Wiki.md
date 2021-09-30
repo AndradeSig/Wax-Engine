@@ -20,12 +20,12 @@ getID()                       -> Gets the Window ID, which is added when created
 ```
 
 ## 🎧 WaxListener
-A classe `WaxListener` faz a comunicação e o gerenciamento do GameLoop do nosso aplicativo. Ele é simples porém bem eficaz em projetos simples
+The `WaxListener` class makes communication and GameLoop management of our application. It is simple but very effective in simple projects.
 ```java
-toListener(WaxModel target)     -> Faz a linkagem de uma interface "WaxModel" para o Listener
-run(WaxWindow window)           -> Roda o GameLoop, executando as funções do "WaxModel" 
-                                   e recebendo a Janela em que queremos rodar o Loop como parametro
+toListener(WaxModel target) -> Link a "WaxModel" interface to the Listener
+run(WaxWindow window)       -> Run GameLoop, executing "WaxModel" functions
+                               and receiving the Window in which we want to run the Loop as a parameter
                                    
-terminate(WaxWindow window)     -> Finaliza o Loop e sua janela, destruindo-a
+terminate(WaxWindow window) -> Terminate the Loop and its window, destroying it
 ```
-Note: É recomendado o uso do `WaxListener` para situações simples, devido ao funcionamento dele. Ainda não é possível ativar Threads no Listener e por isso não é recomendado o uso constante.
+Note: It is recommended to use `WaxListener` for simple situations, due to its functioning. It is not yet possible to enable Threads in the Listener and therefore constant use is not recommended.
