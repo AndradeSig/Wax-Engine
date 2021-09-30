@@ -20,32 +20,32 @@ public class Main implements WaxModel{
 	public static WaxListener listener;
 
 	public Main(){
-		window = new WaxWindow("My first app with WaxEngine!", 800, 600);
-		listener = new WaxListener();
+	    window = new WaxWindow("My first app with WaxEngine!", 800, 600);
+	    listener = new WaxListener();
 
-		listener.toListener(this);
+	    listener.toListener(this);
 	}
 
 	@Override
 	public void start(){
-		window.initialize();
+	    window.initialize();
 	}
 
 	@Override
 	public void update(){
-		window.poll();
-	}
+	    window.poll();
+	} 
 	
 	@Override
 	public void draw(){
-		window.clearColor(1.0f, 0.0f, 0.0f);
-		window.swap();
+	    window.clearColor(1.0f, 0.0f, 0.0f);
+	    window.swap();
 	}
 	
 	public static void main(String[] args){
-		new Main();
-		listener.run(window);
-		listener.terminate(window);
+	    new Main();
+	    listener.run(window);
+	    listener.terminate(window);
 	}
 }
 ```
