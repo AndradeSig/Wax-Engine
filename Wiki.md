@@ -79,13 +79,13 @@ readFile(String path) -> Read a file
 
 # 🌟 Graphics
 ## 🚨 Shader
-A classe `Shader` é bem simples, apenas tem o seu construtor como o principal funcionamento de uma Shader. O construtor recebé 2 parâmetros, indicando qual o local do Arquivo da VertexShader e o segundo parametro indica o local do arquivo da FragmentShader.
+The `Shader` class is quite simple, it just has its constructor as the main working of a Shader. The constructor takes 2 parameters, indicating the location of the VertexShader file and the second parameter indicates the location of the FragmentShader file.
 <img src="https://learnopengl.com/img/getting-started/pipeline.png">
 <br/>
 **Functions**
 ```java
-setColor(Vector3f color, int program, String location) -> Seta uma cor a algum objeto que possua uma Shader
-setMat4(Matrix4f mat, int program, String location)    -> Seta uma matrix de 4 coordenadas a um objeto
-                                                          que possua uma Shader
+setColor(Vector3f color, int program, String location) -> Sets a color to some object that has a Shader
+setMat4(Matrix4f mat, int program, String location)    -> Sets a 4-coordinate matrix to an object
+                                                          that has a shader
 ```
-NOTE: É recomendado o uso mais profundo de Shader para quem já tem conhecimento com computação gráfica e OpenGL.
+NOTE: Deeper use of Shader is recommended for those already familiar with computer graphics and OpenGL.
