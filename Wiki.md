@@ -20,11 +20,11 @@ draw()
 ## ⏰ Time
 The `Time` class is responsible for managing your application's time in a simple way
 ```java
-run() -> It is responsible for running time and updating every Update of your application
-DELTA_TIME -> It is responsible for indicating the 
+run()       -> It is responsible for running time and updating every Update of your application
+DELTA_TIME  -> It is responsible for indicating the 
               time between the current time of your application, and the elapsed time
               
-FRAMES -> It is responsible for indicating the amount of Frames per second of your application(FPS)
+FRAMES      -> It is responsible for indicating the amount of Frames per second of your application(FPS)
 ```
 
 # I/O
