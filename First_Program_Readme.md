@@ -1,4 +1,4 @@
-### 🎮 First application with WaxEngine 🎮
+### 🎮 Simple application with WaxEngine 🎮
 To start, let's create our class named `Main` which will be the main class of our application.
 <br/>
 ```java
