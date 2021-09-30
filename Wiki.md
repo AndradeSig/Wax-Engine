@@ -41,3 +41,10 @@ getName()                     -> Get the current Thread name
 getID()                       -> Get current thread ID
 ```
 Note: `WaxThread` is just a class to facilitate the use of threads
+
+## 📜 WaxUtils
+The `WaxUtils` class is a class with static functions that facilitate some processes for creating your project
+```java
+readFile(String path) -> Read a file
+```
+
