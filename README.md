@@ -7,7 +7,8 @@ The WaxEngine was created to facilitate your process in creating a game, so that
 
 ### It's easy?
 Yes! It's pretty easy, with a little reading you'll understand WaxEngine and you'll be able to create your games freely 😄
-
+<br/>
 # Wiki
 📒 WaxEngine Basic Wiki
+
 
