@@ -77,4 +77,4 @@ toListener() 	-> indica a linkagem da interface "WaxModel" com os seus métodos 
 run() 		-> serve para rodar o GameLoop na janela atual.
 terminate() 	-> irá finalizar e deletar a Janela quando fechada.
 ```
-Lembre-se: Só é recomendado utilizar a `WaxListener` quando for criar um projeto simples, por conta que a `WaxListener` não trabalha com Thread ( ainda ).
+Lembre-se: Só é recomendado utilizar a `WaxListener` quando for criar um projeto simples, por conta que a `WaxListener` não trabalha com Threads ( ainda ).
