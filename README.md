@@ -53,7 +53,7 @@ O implemento `WaxModel` é uma Interface que contém as principais funções par
 - start
 - update
 - draw
---
+-
 Note: É obrigatório implementar esta interface caso você for usar a `WaxListener`
 #
 A classe `WaxWindow` é a classe que terá o funcionamento da Janela.
