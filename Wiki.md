@@ -85,4 +85,4 @@ setColor(Vector3f color, int program, String location) -> Seta uma cor a algum o
 setMat4(Matrix4f mat, int program, String location)    -> Seta uma matrix de 4 coordenadas a um objeto
                                                           que possua uma Shader
 ```
-NOTE: Para entender mais sobre Shaders, veja: https://www.pcmag.com/encyclopedia/term/graphics-pipeline
+<img src="https://learnopengl.com/img/getting-started/pipeline.png">
