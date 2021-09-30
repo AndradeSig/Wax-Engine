@@ -2,7 +2,7 @@
 ## 🔅 Wax
 Can the `Wax` class be considered the main engine? Perhaps! But with this class, you have access to very important objects and functions.
 ```java
-Wax.time -> Object that manages your application's time (more detailed information in the explanation of the Time class)
+Wax.time -> Object that manages your application time (more detailed information in the explanation of the Time class)
 Wax.inputs -> Object that stores and stores information
               of all inputs from our application (Like keys, mouse buttons, etc.)
 
