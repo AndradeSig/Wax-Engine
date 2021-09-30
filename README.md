@@ -50,18 +50,16 @@ public class Main implements WaxModel{
 }
 ```
 O implemento `WaxModel` é uma Interface que contém as principais funções para o funcionamento do Game.
-> start
-<br/>
-> update
-<br/>
-> draw
-<br/>
+```java
+start();
+update();
+draw();
+```
 Note: É obrigatório implementar esta interface caso você for usar a `WaxListener`
 #
 A classe `WaxWindow` é a classe que terá o funcionamento da Janela.
-> 1º Argumento: Título da Janela
-<br/>
-> 2º Argumento: Largura da Janela
-<br/>
-> 3º Argumento: Altura da Janela
-<br/>
+```java
+1º Argumento: Título da Janela
+2º Argumento: Largura da Janela
+3º Argumento: Altura da Janela
+```
