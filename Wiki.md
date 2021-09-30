@@ -1,4 +1,5 @@
-# 🖥️ WaxWindow
+# Inputs/Outputs
+## 🖥️ WaxWindow
 The `WaxWindow` class is responsible for creating, managing and manipulating a Window of your application. It has many functions and we will see them here
 ```java
 
