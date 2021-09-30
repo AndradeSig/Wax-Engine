@@ -1,13 +1,13 @@
 # Simple
 ## 🔅 Wax
-A classe `Wax` pode ser considerada a principal da Engine? Talvez! Porém com está classe, você tem acessos a objetos e funções muito importantes.
+Can the `Wax` class be considered the main engine? Perhaps! But with this class, you have access to very important objects and functions.
 ```java
-Wax.time   -> Objeto que gerencia o tempo do seu aplicativo (mais informações detalhadas na explicação da classe Time)
-Wax.inputs -> Objeto que armazena e guarda as informações 
-              de todos os inputs do nosso aplicativo (Como teclas, botões do mouse e etc)
+Wax.time -> Object that manages your application's time (more detailed information in the explanation of the Time class)
+Wax.inputs -> Object that stores and stores information
+              of all inputs from our application (Like keys, mouse buttons, etc.)
 
-Wax.keyPressed(WaxWindow window, int key)   -> Verifica se uma tecla foi pressionada na Janela escolhida
-Wax.keyReleased(WaxWindow window, int key)  -> Verifica se uma tecla foi solta na Janela escolhida
+Wax.keyPressed(WaxWindow window, int key) -> Checks if a key was pressed in the chosen Window
+Wax.keyReleased(WaxWindow window, int key) -> Checks if a key was released in the chosen Window
 ```
 
 # I/O
