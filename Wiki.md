@@ -9,6 +9,13 @@ Wax.inputs -> Object that stores and stores information
 Wax.keyPressed(WaxWindow window, int key)   -> Checks if a key was pressed in the chosen Window
 Wax.keyReleased(WaxWindow window, int key)  -> Checks if a key was released in the chosen Window
 ```
+## 🪨 WaxModel
+The `WaxModel` Interface is responsible for delivering the main functions based on your Application
+```java
+start()
+update()
+draw()
+```
 
 # I/O
 ## 🖥️ WaxWindow
