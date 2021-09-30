@@ -29,3 +29,15 @@ run(WaxWindow window)       -> Run GameLoop, executing "WaxModel" functions
 terminate(WaxWindow window) -> Terminate the Loop and its window, destroying it
 ```
 Note: It is recommended to use `WaxListener` for simple situations, due to its functioning. It is not yet possible to enable Threads in the Listener and therefore constant use is not recommended.
+
+## 📼 WaxThread
+A classe `WaxThread` é responsável por criar, ativar e manipular as Threads de seu Aplicativo de uma forma fácil e rápida. 
+```java
+enable(Runnable target)   -> Ativa a Thread atual e seleciona a função "run" da interface "Runnable"
+stop()                    -> Para e finaliza a Thread atual
+interval(int time)        -> Faz o sleep da Thread em um determinado tempo
+
+getName()                 -> Pega o nome atual da Thread
+getID()                   -> Pega o ID atual da Thread
+```
+Note: A `WaxThread` é apenas uma classe para facilitar o uso de Threads
