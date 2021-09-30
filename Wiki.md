@@ -27,3 +27,5 @@ run(WaxWindow window)           -> Roda o GameLoop, executando as funções do "
                                    e recebendo a Janela em que queremos rodar o Loop como parametro
                                    
 terminate(WaxWindow window)     -> Finaliza o Loop e sua janela, destruindo-a
+```
+Note: É recomendado o uso do `WaxListener` para situações simples, devido ao funcionamento dele. Ainda não é possível ativar Threads no Listener e por isso não é recomendado o uso constante do mesmo.
