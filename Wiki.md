@@ -89,3 +89,10 @@ setMat4(Matrix4f mat, int program, String location)    -> Sets a 4-coordinate ma
                                                           that has a shader
 ```
 NOTE: Deeper use of Shader is recommended for those already familiar with computer graphics or OpenGL.
+
+## 🔦 Material
+A classe `Material` é responsável por criar e indicar algum Material( Textura ) ao seu Objeto.
+```java
+setTexture(String path)     -> Cria uma Textura com o parametro indicando o local que está a Imagem
+bindTexture()               -> Faz a ligação da Textura
+
