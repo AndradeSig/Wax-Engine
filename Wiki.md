@@ -31,13 +31,13 @@ terminate(WaxWindow window) -> Terminate the Loop and its window, destroying it
 Note: It is recommended to use `WaxListener` for simple situations, due to its functioning. It is not yet possible to enable Threads in the Listener and therefore constant use is not recommended.
 
 ## 📼 WaxThread
-A classe `WaxThread` é responsável por criar, ativar e manipular as Threads de seu Aplicativo de uma forma fácil e rápida. 
+The `WaxThread` class is responsible for creating, activating and manipulating your Application Threads in an easy and fast way.
 ```java
-enable(Runnable target)   -> Ativa a Thread atual e seleciona a função "run" da interface "Runnable"
-stop()                    -> Para e finaliza a Thread atual
-interval(int time)        -> Faz o sleep da Thread em um determinado tempo
+enable(Runnable target)       -> Activate the current Thread and select the "run" function of the "Runnable" interface
+stop()                        -> Stops and ends the current Thread
+interval(int time)            -> Sleeps the Thread at a certain time
 
-getName()                 -> Pega o nome atual da Thread
-getID()                   -> Pega o ID atual da Thread
+getName()                     -> Get the current Thread name
+getID()                       -> Get current thread ID
 ```
-Note: A `WaxThread` é apenas uma classe para facilitar o uso de Threads
+Note: `WaxThread` is just a class to facilitate the use of threads
