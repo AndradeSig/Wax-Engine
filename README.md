@@ -63,3 +63,11 @@ A classe `WaxWindow` é a classe que terá o funcionamento da Janela.
 2º Argumento: Largura da Janela
 3º Argumento: Altura da Janela
 ```
+#
+A classe `WaxListener` é a classe que fará a comunicação e facilitará o processo do GameLoop do nosso jogo/aplicativo.
+<br/>
+A função `toListener` indica a linkagem da interface `WaxModel` com os seus métodos ao Listener.
+<br/>
+A função `run` serve para rodar o GameLoop na janela atual.
+<br/>
+A função `terminate` irá finalizar e deletar a Janela quando fechada.
