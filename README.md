@@ -1,4 +1,4 @@
-# Wax Engine
+# 🍵 Wax Engine 🍵
 💫 A simple, and fast Game Engine for Java.
 
 ### What's it?
