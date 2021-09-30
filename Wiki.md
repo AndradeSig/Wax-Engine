@@ -77,3 +77,12 @@ The `WaxUtils` class is a class with static functions that facilitate some proce
 readFile(String path) -> Read a file
 ```
 
+# 🌟 Graphics
+## 🚨 Shader
+A classe `Shader` é bem simples, apenas tem o seu construtor como o principal funcionamento de uma Shader. O construtor recebé 2 parâmetros, indicando qual o local do Arquivo da VertexShader e o segundo parametro indica o local do arquivo da FragmentShader.
+```java
+setColor(Vector3f color, int program, String location) -> Seta uma cor a algum objeto que possua uma Shader
+setMat4(Matrix4f mat, int program, String location)    -> Seta uma matrix de 4 coordenadas a um objeto
+                                                          que possua uma Shader
+```
+NOTE: Para entender mais sobre Shaders, veja: https://www.pcmag.com/encyclopedia/term/graphics-pipeline
