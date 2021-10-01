@@ -51,3 +51,4 @@ public class SimpleApplication implements WaxModel {
     }
 }
 ```
+The result: <img src="https://cdn.discordapp.com/attachments/837039667265142838/893557681237930004/unknown.png">
