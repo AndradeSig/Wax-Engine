@@ -51,4 +51,6 @@ public class SimpleApplication implements WaxModel {
     }
 }
 ```
-The result: <br/> <img src="https://cdn.discordapp.com/attachments/837039667265142838/893557681237930004/unknown.png" width="60%">
+The result: <br/> <img src="https://cdn.discordapp.com/attachments/837039667265142838/893557681237930004/unknown.png" width="50%">
+<br/>
+I know, it's a beautiful face :)
