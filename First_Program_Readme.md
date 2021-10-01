@@ -122,7 +122,7 @@ public static void main(String[] args){
 `simple.listener.terminate()` will destroy the window and terminate the WaxEngine after the game loop ends
 <br/>
 <br/>
-Well, if you ran the application and everything worked out, then congratulations! The square isn't rotating yet, but it's already being rendered with a texture.
+Well, if you run the application and everything worked out, then congratulations! The square isn't rotating yet, but it's already being rendered with a texture.
 For us to do the rotation, it's very simple!:
 ```java
 @Override
