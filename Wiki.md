@@ -123,3 +123,32 @@ setColor(Vector3f color)                                -> You can set a color
 setTexture(String path, boolean enable)                 -> Set a texture
 ```
 NOTE: It is recommended to use the `Mesh` class for those who already know about Computer Graphics or OpenGL.
+<br/>
+<br/>
+Examples with Mesh:
+```java
+
+private Mesh mesh;
+
+@Override
+public void start(){
+
+    float[] vertices = {
+      -0.5f, -0.5f, 0.0f,
+       0.5f, -0.5f, 0.0f,
+       0.0f,  0.5f, 0.0f
+     };
+     
+    mesh = new Mesh(vertices);
+    mesh.bind(Wax.STATIC);
+    mesh.setPointer(0, 3, 3 * Float.BYTES, 0);
+    mesh.unbind();
+}
+
+@Override
+public void draw(){
+    mesh.bindToDraw(1);
+    mesh.draw(0, 3);
+    mesh.restore(1);
+}
+```
