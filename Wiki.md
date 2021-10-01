@@ -140,8 +140,8 @@ public void start(){
      };
      
     mesh = new Mesh(vertices);
-    mesh.bind(Wax.STATIC);
-    mesh.setPointer(0, 3, 3 * Float.BYTES, 0);
+    mesh.bind(Wax.STATIC);                      -> Indicando que o tipo que será usado na Mesh é "STATIC"
+    mesh.setPointer(0, 3, 3 * Float.BYTES, 0);  -> Float.BYTES = 4
     mesh.unbind();
 }
 
