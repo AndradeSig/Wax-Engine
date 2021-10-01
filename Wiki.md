@@ -129,10 +129,10 @@ All of our meshes will have a default Mesh Color, Texture and Location.
 It would not be mandatory to use texture or color, so you are free to name the default Uniforms as you wish.
 ```java
 Color_Uniform       -> Represents the name given to the Uniform of your mesh color
-Texture_Uniform     -> Represents the name given to the Uniform of your Mesh's texture
+Texture_Uniform     -> Represents the name given to the Uniform of your Mesh texture
 Transform_Uniform   -> Represents the name given to the Uniform of your Mesh location
 
-Texture_Location    -> Represents your texture's location value
+Texture_Location    -> Represents your texture location value
 ```
 NOTE: It is recommended to use the `Mesh` class for those who already know about Computer Graphics or OpenGL.
 <br/>
