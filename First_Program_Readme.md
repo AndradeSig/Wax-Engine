@@ -54,8 +54,8 @@ public SimpleApplication(){
 WaxWindow tem um construtor que requer 3 parametros. Sendo eles: `Title, Width and Height`
 <br/>
 `listener.toListener(this)` faz a linkagem da nossa `WaxModel` para o nosso Listener. `this` se refere a nossa classe principal pois faz o implemento da `WaxModel`
-<br/
-<br/
+<br/>
+<br/>
 Após isso, faremos algumas setagens importante:
 ```java
 @Override
@@ -115,9 +115,11 @@ public static void main(String[] args){
 }
 ```
 `simple.listener.run()` irá rodar o game loop principal do nosso aplicativo. Como já foi dito na Wiki, esta função não é recomendado pra projetos maiores, por conta de não usar Threads, e isso pode ser um problema mais pra frente :(
+<br/>
 `simple.quad.delete()` irá deletar o nosso quadrado após o fim do game loop.
+<br/>
 `simple.listener.terminate()` irá destruir a janela e encerrar a WaxEngine após o fim do game loop
-```
+<br/>
 The result: <br/> <img src="https://cdn.discordapp.com/attachments/837039667265142838/893557681237930004/unknown.png" width="50%">
 <br/>
 I know, it's a beautiful face :)
