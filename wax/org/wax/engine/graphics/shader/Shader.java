@@ -79,9 +79,4 @@ public class Shader {
             GL20.glUniformMatrix4fv(GL20.glGetUniformLocation(program, location), false, fMatBuffer);
         }
     }
-
-    public static void enableTexture(int index, int program, String location)
-    {
-        GL20.glUniform1i(GL20.glGetUniformLocation(program, location), index);
-    }
 }

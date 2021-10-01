@@ -1,5 +1,6 @@
 package org.wax.engine.graphics;
 
+import org.joml.Vector3f;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL20;
@@ -16,6 +17,14 @@ public class Mesh {
     private Shader shader;
     public Transform transform;
     private Material material;
+
+    private Vector3f color = new Vector3f(0.0f, 0.0f, 0.0f);
+
+    public String Color_Location     = "";
+    public String Texture_Location   = "";
+    public String Transform_Location = "";
+
+    public int Texture_Index         = 0;
 
     private float[] vertex;
     private int VAO, VBO, EBO;
@@ -92,23 +101,28 @@ public class Mesh {
         if(withTexture){
             material.bindTexture();
             GL20.glActiveTexture(GL15.GL_TEXTURE0);
-            Shader.enableTexture(0, shader.getProgram(), "texture1");
+            GL20.glUniform1i(GL20.glGetUniformLocation(shader.getProgram(), Texture_Location), 0);
+            GL30.glEnableVertexAttribArray(Texture_Index);
         }
 
         for(int i = 0; i < locals; i++)
-            GL30.glEnableVertexAttribArray(i);
+            if(i != Texture_Index) GL30.glEnableVertexAttribArray(i);
     }
 
     public void draw(int first, int count)
     {
-        Shader.setMat4(transform.get(), shader.getProgram(), "transform");
+        GL11.glDisable(GL11.GL_DEPTH_TEST);
+        Shader.setColor(color, shader.getProgram(), Color_Location);
+        Shader.setMat4(transform.get(), shader.getProgram(), Transform_Location);
         GL30.glDrawArrays(GL11.GL_TRIANGLES, first, count);
+        GL11.glEnable(GL11.GL_DEPTH_TEST);
     }
 
     public void draw(int length)
     {
         GL11.glDisable(GL11.GL_DEPTH_TEST);
-        Shader.setMat4(transform.get(), shader.getProgram(), "transform");
+        Shader.setColor(color, shader.getProgram(), Color_Location);
+        Shader.setMat4(transform.get(), shader.getProgram(), Transform_Location);
         GL30.glDrawElements(GL11.GL_TRIANGLES, length, GL11.GL_UNSIGNED_INT, 0);
         GL11.glEnable(GL11.GL_DEPTH_TEST);
     }
@@ -118,6 +132,11 @@ public class Mesh {
     public void setShader(String vertex, String fragment)
     {
         shader = new Shader(vertex, fragment);
+    }
+
+    public void setColor(Vector3f color)
+    {
+        this.color = color;
     }
 
     public void setTexture(String path, boolean enable)
