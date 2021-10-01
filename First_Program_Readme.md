@@ -144,4 +144,4 @@ The result: <br/> <img src="https://cdn.discordapp.com/attachments/8370396672651
 I know, it's a beautiful face :)
 <br/>
 <br/>
-🗒️[(Complete code here)](https://github.com/AndradeSig/WaxEngine/blob/master/wax/tests/wax/examples/SimpleApplication.java)
+🗒️[(Full code here)](https://github.com/AndradeSig/WaxEngine/blob/master/wax/tests/wax/examples/SimpleApplication.java)
