@@ -89,6 +89,7 @@ public void draw(){
 }
 ```
 `Wax.time.run()` inicia o tempo do nosso aplicativo para nós pegarmos o DeltaTime
+<br/>
 NOTE: Não precisa usar `Wax.color.BLUE`, vocẽ pode simplesmente usar `new Vector3f(0.0f, 0.0f, 1.0f)`
 <br/>
 <br/>
@@ -119,6 +120,7 @@ public static void main(String[] args){
 `simple.quad.delete()` irá deletar o nosso quadrado após o fim do game loop.
 <br/>
 `simple.listener.terminate()` irá destruir a janela e encerrar a WaxEngine após o fim do game loop
+<br/>
 <br/>
 The result: <br/> <img src="https://cdn.discordapp.com/attachments/837039667265142838/893557681237930004/unknown.png" width="50%">
 <br/>
