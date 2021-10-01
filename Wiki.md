@@ -96,4 +96,30 @@ The `Material` class is responsible for creating and indicating some Material(Te
 setTexture(String path)     -> Creates a Texture with the parameter indicating the location of the Image
 bindTexture()               -> Enable the texture
 ```
+## 📐 Mesh
+A classe `Mesh` é responsável pela principal forma de se criar uma forma geométrica. Ela tem as principais e mais importantes funções básicas para a criação.
+```java
+bind(int usage)     -> Faz a criação e a principal setagem para a forma geométrica.
+                       O parametro "usage" representa qual a forma que queremos que a nossa forma funcione,
+                       podendo ser "STATIC" ou "DYNAMIC"
+                       
+bindElementBufferObject(int[] indices, int usage)   -> Faz a criação da EBO (ElementBufferObject)
+unbind()    -> Desabilita e limpa a memória para uma melhor otimização
+delete()    -> Delete toda a nossa criação
+restore()   -> Faz a restauração das nossas criações (utilizado para restauramos e renderizamos em seguida)
+bindToDraw(int locals)        -> Habilita e monta os nossos dados para renderizamos.
+                                 "locals" representa todos os nossos locais que atribuimos
+                                 
+draw(int first, int count)    -> Faz a renderização da nossa forma geométrica.
+                                 "first" representa em qual Stride começaremos, e "count" a quantidade de 
+                                 vértices que vamos renderizar
+                                 
+draw(int length)              -> Faz a renderização com Elementos, para caso nós tivermos a EBO ligada
+                                 "length" é a quantidade de indices que renderizaremos
+ 
+setPointer(int local, int pos, int stride, int pointer)   -> Serve para atribuir e ligar um ponteiro para a VAO
+setShader(String vertex, String fragment)                 -> Serve para você criar uma Shader
+setColor(Vector3f color)                                  -> Serve para você setar uma Cor
+setTexture(String path, boolean enable)                   -> Serve para você setar uma textura
+
 
