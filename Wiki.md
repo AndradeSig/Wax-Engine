@@ -122,6 +122,11 @@ setShader(String vertex, String fragment)               -> You can create a Shad
 setColor(Vector3f color)                                -> You can set a color
 setTexture(String path, boolean enable)                 -> Set a texture
 ```
+A forma em que nós trabalhamos com Mesh é algo único.
+<br/>
+Todas as nossas Meshs terão uma Cor, textura e localização padrão para as Meshs.
+<br/>
+Não seria obrigatório usar textura ou cor, e por isso você é livre em colocar os nomes que você quiser para as Uniforms padrões.
 ```java
 Color_Location      -> Representa o nome que se da ao Uniform da cor da sua mesh
 Texture_Location    -> Representa o nome que se da ao Uniform da textura da sua Mesh
