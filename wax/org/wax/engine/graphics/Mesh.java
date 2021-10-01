@@ -20,11 +20,11 @@ public class Mesh {
 
     private Vector3f color = new Vector3f(0.0f, 0.0f, 0.0f);
 
-    public String Color_Location     = "";
-    public String Texture_Location   = "";
-    public String Transform_Location = "";
+    public String Color_Uniform     = "";
+    public String Texture_Uniform   = "";
+    public String Transform_Uniform = "";
 
-    public int Texture_Index         = 0;
+    public int Texture_Location         = 0;
 
     private float[] vertex;
     private int VAO, VBO, EBO;
@@ -101,19 +101,19 @@ public class Mesh {
         if(withTexture){
             material.bindTexture();
             GL20.glActiveTexture(GL15.GL_TEXTURE0);
-            GL20.glUniform1i(GL20.glGetUniformLocation(shader.getProgram(), Texture_Location), 0);
-            GL30.glEnableVertexAttribArray(Texture_Index);
+            GL20.glUniform1i(GL20.glGetUniformLocation(shader.getProgram(), Texture_Uniform), 0);
+            GL30.glEnableVertexAttribArray(Texture_Location);
         }
 
         for(int i = 0; i < locals; i++)
-            if(i != Texture_Index) GL30.glEnableVertexAttribArray(i);
+            if(i != Texture_Location) GL30.glEnableVertexAttribArray(i);
     }
 
     public void draw(int first, int count)
     {
         GL11.glDisable(GL11.GL_DEPTH_TEST);
-        Shader.setColor(color, shader.getProgram(), Color_Location);
-        Shader.setMat4(transform.get(), shader.getProgram(), Transform_Location);
+        Shader.setColor(color, shader.getProgram(), Color_Uniform);
+        Shader.setMat4(transform.get(), shader.getProgram(), Transform_Uniform);
         GL30.glDrawArrays(GL11.GL_TRIANGLES, first, count);
         GL11.glEnable(GL11.GL_DEPTH_TEST);
     }
@@ -121,8 +121,8 @@ public class Mesh {
     public void draw(int length)
     {
         GL11.glDisable(GL11.GL_DEPTH_TEST);
-        Shader.setColor(color, shader.getProgram(), Color_Location);
-        Shader.setMat4(transform.get(), shader.getProgram(), Transform_Location);
+        Shader.setColor(color, shader.getProgram(), Color_Uniform);
+        Shader.setMat4(transform.get(), shader.getProgram(), Transform_Uniform);
         GL30.glDrawElements(GL11.GL_TRIANGLES, length, GL11.GL_UNSIGNED_INT, 0);
         GL11.glEnable(GL11.GL_DEPTH_TEST);
     }

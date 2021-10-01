@@ -28,10 +28,10 @@ public class Quad {
         mesh = new Mesh(quad_vertices);
         transform = mesh.transform;
 
-        mesh.Color_Location     = "_color";
-        mesh.Texture_Location   = "_sampler";
-        mesh.Transform_Location = "_transform";
-        mesh.Texture_Index      = 1;
+        mesh.Color_Uniform      = "_color";
+        mesh.Texture_Uniform    = "_sampler";
+        mesh.Transform_Uniform  = "_transform";
+        mesh.Texture_Location      = 1;
     }
 
     public void create(int usage)
