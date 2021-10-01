@@ -122,6 +122,23 @@ public static void main(String[] args){
 `simple.listener.terminate()` irá destruir a janela e encerrar a WaxEngine após o fim do game loop
 <br/>
 <br/>
+Bom, se você executou o aplicativo e deu tudo certo, então parabéns! O quadrado ainda não está rotacionando, porém já está sendo renderizado com uma textura. 
+Para nós fazermos a rotação, é bem simples!:
+```java
+@Override
+public void update(){
+    (...)
+    float angle_speed = 0.5f * (float)Wax.time.DELTA_TIME;
+    quad.transform.rotate(angle_speed, new Vector3f(0.0f, 0.0f, 1.0f));
+}
+```
+`Wax.time.DELTA_TIME` representa o valor entre o tempo atual e o tempo passado do nosso aplicativo. É muito bom e recomendado usar para valores que serão atualizados a cada frame e que terá que rodar de acordo com diferentes tipos de computadores. Como sabemos, os computadores não são iguais, e por isso alguns terão um jogo mais lento que o outro. Para não deixar o jogo mais lento que uma tartaruga na terra, multiplicamos o valor que será atualizado constantemente pelo valor em Delta.
+<br/>
+`quad.transform.rotate(angle_speed, new Vector3f(0.0f, 0.0f, 1.0f))` faz a rotação do nosso quadrado. Tendo o último parametro pedindo o eixo em que ele será rotacionado. Como estamos trabalhando com o 2D, apenas rotacionaremos no Eixo Z, mas seja livre para testar setando em qualquer eixo.
+<br/>
+<br/>
+Após isso, quando você executar verá um lindo quadrado rotacionando :)
+<br/>
 The result: <br/> <img src="https://cdn.discordapp.com/attachments/837039667265142838/893557681237930004/unknown.png" width="50%">
 <br/>
 I know, it's a beautiful face :)
