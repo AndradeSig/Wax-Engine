@@ -128,11 +128,11 @@ All of our meshes will have a default Mesh Color, Texture and Location.
 <br/>
 It would not be mandatory to use texture or color, so you are free to name the default Uniforms as you wish.
 ```java
-Color_Uniform -> Represents the name given to the Uniform of your mesh color
-Texture_Uniform -> Represents the name given to the Uniform of your Mesh's texture
-Transform_Uniform -> Represents the name given to the Uniform of your Mesh location
+Color_Uniform       -> Represents the name given to the Uniform of your mesh color
+Texture_Uniform     -> Represents the name given to the Uniform of your Mesh's texture
+Transform_Uniform   -> Represents the name given to the Uniform of your Mesh location
 
-Texture_Location -> Represents your texture's location value
+Texture_Location    -> Represents your texture's location value
 ```
 NOTE: It is recommended to use the `Mesh` class for those who already know about Computer Graphics or OpenGL.
 <br/>
@@ -152,6 +152,13 @@ public void start(){
      };
      
     mesh = new Mesh(vertices);
+    mesh.setShader(Wax.readFile("my_vertex.glsl"), Wax.readFile("my_fragment.glsl"));
+  
+    mesh.Color_Uniform      = "_my_color_uniform";      // The "_my_color_uniform" is located on fragment shader
+    mesh.Texture_Uniform    = "_my_texture_uniform";    // The "_my_texture_uniform" is located on fragment shader
+    mesh.Transform_Uniform  = "_my_transform_uniform";  // The "_my_transform_uniform" is located on vertex shader
+    mesh.Texture_Location   = 1;                        // The location "1" is located on vertex shader
+
     mesh.bind(Wax.STATIC);
     mesh.setPointer(0, 3, 3 * Float.BYTES, 0);
     mesh.unbind();
