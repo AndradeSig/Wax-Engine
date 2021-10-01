@@ -1,12 +1,12 @@
 ### 🎮 Simple application with WaxEngine 🎮
-Aqui nós criaremos um projeto simples, que terá apenas um quadrado com uma textura rotacionando no centro da tela.
+Here we will create a simple design, which will have just one square with a texture rotating in the center of the canvas.
 <br/>
-Este simples projeto serve para você ver um pouco mais sobre o "Quad" e como funciona o Listener.
+This simple project is for you to see a little more about the "Quad" and how the Listener works.
 <br/>
 <br/>
-Para começarmos, vamos criar uma classe com o nome "SimpleApplication", que terá a inteface "WaxModel" implementada.
+To start, let's create a class named "SimpleApplication", which will have the "WaxModel" interface implemented.
 <br/>
-A interface "WaxModel" entrega as principais funções para os nossos aplicativos/jogo.
+The "WaxModel" interface delivers the main functions for our apps/game.
 ```java
 public class SimpleApplication implements WaxModel {
 
@@ -34,7 +34,7 @@ public class SimpleApplication implements WaxModel {
     }
 }
 ```
-Após isso, precisamos fazer algumas declarações:
+After that, we need to make some statements:
 ```java
 
 private WaxWindow window;
@@ -49,14 +49,14 @@ public SimpleApplication(){
     listener.toListener(this);
 }
 ```
-`Quad` é a uma classe para criarmos um simples quadrado com algumas funções principais para um objeto.
+`Quad` is a class for creating a simple square with some main functions for an object.
 <br/>
-WaxWindow tem um construtor que requer 3 parametros. Sendo eles: `Title, Width and Height`
+WaxWindow has a constructor that requires 3 parameters. They are: `Title, Width and Height`
 <br/>
-`listener.toListener(this)` faz a linkagem da nossa `WaxModel` para o nosso Listener. `this` se refere a nossa classe principal pois faz o implemento da `WaxModel`
+`listener.toListener(this)` links our `WaxModel` to our Listener. `this` refers to our main class as it implements the `WaxModel`
 <br/>
 <br/>
-Após isso, faremos algumas setagens importante:
+After that, we'll make some important settings:
 ```java
 @Override
 public void start(){
@@ -68,32 +68,32 @@ public void start(){
     quad.transform.scale(new Vector2f(0.4f, -0.4f));
 }
 ```
-`window.setVsync(true)` habilita o vsync e trava os frames por segundo.
+`window.setVsync(true)` enables vsync and locks frames per second.
 <br/>
-`quad.create(Wax.STATIC)` cria a mesh do nosso quadrado com uma forma estática(STATIC). A variável que armazena o valor para Estático está na classe Wax, e por isso acessamos por ela.
+`quad.create(Wax.STATIC)` creates the mesh of our square with a static shape(STATIC). The variable that stores the value for Static is in the Wax class, and that's why we access it.
 <br/>
-`quad.transform.scale(new Vector2f(0.4f, -0.4f))` seta uma escala para o nosso quadrado. O número `-0.4f` está negativo para nos dar um efeito de que o qudrado está virado para baixo.
+`quad.transform.scale(new Vector2f(0.4f, -0.4f))` sets a scale for our square. The number `-0.4f` is negative to give us an effect that the square is face down.
 <br/>
 <br/>
-Após isso, nós precisamos atualizar e renderizar as coisas.
+After that we need to update and render things.
 ```java
 @Override
 public void update(){
     Wax.time.run();
     window.poll();
 }
-@Override 
+@Override
 public void draw(){
     window.clearColor(Wax.color.BLUE);
     window.swap();
 }
 ```
-`Wax.time.run()` inicia o tempo do nosso aplicativo para nós pegarmos o DeltaTime
+`Wax.time.run()` starts our application's time for us to get the DeltaTime
 <br/>
-NOTE: Não precisa usar `Wax.color.BLUE`, vocẽ pode simplesmente usar `new Vector3f(0.0f, 0.0f, 1.0f)`
+NOTE: You don't need to use `Wax.color.BLUE`, you can just use `new Vector3f(0.0f, 0.0f, 1.0f)`
 <br/>
 <br/>
-Faltou algumas coisas... Não fizemos nada para renderizarmos o nosso quadrado... Então faremos isso agora :)
+Some things were missing... We didn't do anything to render our square... So we'll do it now :)
 ```java
 @Override
 public void draw(){
@@ -102,10 +102,10 @@ public void draw(){
     (...)
 }
 ```
-`quad.draw` é uma função própria da nossa classe do Quadrado para renderizarmos de uma forma automática.
+`quad.draw` is a function of our Square class to render automatically.
 <br/>
 <br/>
-Agora vamos fazer o mais importante para executarmos o aplicativo... O método main:
+Now let's do the most important thing to run the application... The main method:
 ```java
 public static void main(String[] args){
     SimpleApplication simple = new SimpleApplication();
@@ -115,15 +115,15 @@ public static void main(String[] args){
     simple.listener.terminate(simple.window);
 }
 ```
-`simple.listener.run()` irá rodar o game loop principal do nosso aplicativo. Como já foi dito na Wiki, esta função não é recomendado pra projetos maiores, por conta de não usar Threads, e isso pode ser um problema mais pra frente :(
+`simple.listener.run()` will run our application's main game loop. As already said on the Wiki, this function is not recommended for larger projects, because of not using Threads, and this can be a problem later on :(
 <br/>
-`simple.quad.delete()` irá deletar o nosso quadrado após o fim do game loop.
+`simple.quad.delete()` will delete our square after the game loop ends.
 <br/>
-`simple.listener.terminate()` irá destruir a janela e encerrar a WaxEngine após o fim do game loop
+`simple.listener.terminate()` will destroy the window and terminate the WaxEngine after the game loop ends
 <br/>
 <br/>
-Bom, se você executou o aplicativo e deu tudo certo, então parabéns! O quadrado ainda não está rotacionando, porém já está sendo renderizado com uma textura. 
-Para nós fazermos a rotação, é bem simples!:
+Well, if you ran the application and everything worked out, then congratulations! The square isn't rotating yet, but it's already being rendered with a texture.
+For us to do the rotation, it's very simple!:
 ```java
 @Override
 public void update(){
@@ -132,12 +132,12 @@ public void update(){
     quad.transform.rotate(angle_speed, new Vector3f(0.0f, 0.0f, 1.0f));
 }
 ```
-`Wax.time.DELTA_TIME` representa o valor entre o tempo atual e o tempo passado do nosso aplicativo. É muito bom e recomendado usar para valores que serão atualizados a cada frame e que terá que rodar de acordo com diferentes tipos de computadores. Como sabemos, os computadores não são iguais, e por isso alguns terão um jogo mais lento que o outro. Para não deixar o jogo mais lento que uma tartaruga na terra, multiplicamos o valor que será atualizado constantemente pelo valor em Delta.
+`Wax.time.DELTA_TIME` represents the value between the current and past time of our application. It is very good and recommended to use for values ​​that will be updated every frame and that will have to run according to different types of computers. As we know, computers are not the same, so some will have a slower game than the other. In order not to slow down the game than a turtle on earth, we've multiplied the value that will be constantly updated by the value in Delta.
 <br/>
-`quad.transform.rotate(angle_speed, new Vector3f(0.0f, 0.0f, 1.0f))` faz a rotação do nosso quadrado. Tendo o último parametro pedindo o eixo em que ele será rotacionado. Como estamos trabalhando com o 2D, apenas rotacionaremos no Eixo Z, mas seja livre para testar setando em qualquer eixo.
+`quad.transform.rotate(angle_speed, new Vector3f(0.0f, 0.0f, 1.0f))` does the rotation of our square. Having the last parameter asking for the axis it will be rotated on. Since we're working with 2D, we'll only rotate on the Z Axis, but feel free to experiment by setting on any axis.
 <br/>
 <br/>
-Após isso, quando você executar verá um lindo quadrado rotacionando :)
+After that when you run you will see a beautiful rotating square :)
 <br/>
 The result: <br/> <img src="https://cdn.discordapp.com/attachments/837039667265142838/893557681237930004/unknown.png" width="50%">
 <br/>
