@@ -121,5 +121,6 @@ setPointer(int local, int pos, int stride, int pointer)   -> Serve para atribuir
 setShader(String vertex, String fragment)                 -> Serve para você criar uma Shader
 setColor(Vector3f color)                                  -> Serve para você setar uma Cor
 setTexture(String path, boolean enable)                   -> Serve para você setar uma textura
-
+```
+NOTE: Recomendado o uso da classe `Mesh` para quem já tem conhecimento com Computação Gráfica ou OpenGL.
 
