@@ -175,18 +175,20 @@ public void draw(){
 
 # ➕ Wmath
 ## 🔢 Transform
-A classe `Transform` é responsável por controlar as posições, escalas, rotações ... da sua Mesh.
+The `Transform` class is responsible for controlling the positions, scales, rotations... of your Mesh.
 ```java
-position (Vector2f position) -> Seta uma nova posição para a sua malha
-escala (escala Vector2f) -> Seta uma nova escala para a sua Mesh
-girar (ângulo de flutuação, eixo Vector3f) -> Seta uma nova rotação para a sua Mesh
+position (Vector2f position)           -> Set a new position for your mesh
+scale (Vector2f scale)                 -> Set a new scale for your Mesh
+rotate (floating angle, Vector3f axis) -> Set a new rotation for your Mesh
 
-get () -> Retorna a variável que controla essas transformações
-getX () -> Retorna a posição "X" da sua Mesh
-getY () -> Retorna a posição "Y" da sua Mesh
-getWidth () -> Retorna a Largura da sua Mesh
-getHeight () -> Retorna a Altura da sua Malha
-getAngle () -> Retorna o Angulo da sua Mesh
+get()       -> Returns the variable that controls these transformations
+getX()      -> Return the "X" position of your Mesh
+getY()      -> Returns the "Y" position of your Mesh
+getWidth()  -> Return your Mesh Width
+getHeight() -> Returns the height of your mesh
+getAngle()  -> Return your Mesh Angle
 ```
+
+
 
 
