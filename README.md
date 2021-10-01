@@ -7,6 +7,10 @@ The WaxEngine was created to facilitate your process in creating a game, so that
 
 ### It's easy?
 Yes! It's pretty easy, with a little reading you'll understand WaxEngine and you'll be able to create your games freely 😄
+
+# Instalation
+[(Install the WaxEngine here)](https://github.com/AndradeSig/WaxEngine/releases/download/Lib/WaxEngine.jar)
+
 # Wiki
 📒 [(WaxEngine Wiki)](https://github.com/AndradeSig/WaxEngine/blob/master/Wiki.md)
 <br/>
