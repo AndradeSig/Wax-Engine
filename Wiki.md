@@ -97,30 +97,29 @@ setTexture(String path)     -> Creates a Texture with the parameter indicating t
 bindTexture()               -> Enable the texture
 ```
 ## 📐 Mesh
-A classe `Mesh` é responsável pela principal forma de se criar uma forma geométrica. Ela tem as principais e mais importantes funções básicas para a criação.
+The `Mesh` class is responsible for the main way to create a geometric shape. It has the main and most important basic functions for creation.
 ```java
-bind(int usage)     -> Faz a criação e a principal setagem para a forma geométrica.
-                       O parametro "usage" representa qual a forma que queremos que a nossa forma funcione,
-                       podendo ser "STATIC" ou "DYNAMIC"
+bind(int usage) -> Makes the creation and main setting for the geometric shape.
+                       The parameter "usage" represents how we want our form to work,
+                       it can be "STATIC" or "DYNAMIC"
                        
-bindElementBufferObject(int[] indices, int usage)   -> Faz a criação da EBO (ElementBufferObject)
-unbind()    -> Desabilita e limpa a memória para uma melhor otimização
-delete()    -> Delete toda a nossa criação
-restore()   -> Faz a restauração das nossas criações (utilizado para restauramos e renderizamos em seguida)
-bindToDraw(int locals)        -> Habilita e monta os nossos dados para renderizamos.
-                                 "locals" representa todos os nossos locais que atribuimos
+bindElementBufferObject(int[] indices, int usage)     -> Makes EBO creation (ElementBufferObject)
+unbind()                                              -> Disable and clear memory for better optimization
+delete()                                              -> Delete our entire creation
+restore()                                             -> Restores our creations (used to restore and then render)
+bindToDraw(int locals)                                -> Enable and assemble our data for rendering.
+                                                         "locals" represents all of our assigned locations.
                                  
-draw(int first, int count)    -> Faz a renderização da nossa forma geométrica.
-                                 "first" representa em qual Stride começaremos, e "count" a quantidade de 
-                                 vértices que vamos renderizar
+draw(int first, int count)                            -> Render our geometric shape.
+                                                      "first" represents which Stride we will start in, 
+                                                      and "count" the amount of vertices that we are going to render
                                  
-draw(int length)              -> Faz a renderização com Elementos, para caso nós tivermos a EBO ligada
-                                 "length" é a quantidade de indices que renderizaremos
+draw(int length)                                      -> Render with Elements, in case we have EBO turned on
+                                                         "length" is the number of indices we will render
  
-setPointer(int local, int pos, int stride, int pointer)   -> Serve para atribuir e ligar um ponteiro para a VAO
-setShader(String vertex, String fragment)                 -> Serve para você criar uma Shader
-setColor(Vector3f color)                                  -> Serve para você setar uma Cor
-setTexture(String path, boolean enable)                   -> Serve para você setar uma textura
+setPointer(int local, int pos, int stride, int pointer) -> Sets and binds a pointer to the VAO
+setShader(String vertex, String fragment)               -> You can create a Shader
+setColor(Vector3f color)                                -> You can set a color
+setTexture(String path, boolean enable)                 -> Set a texture
 ```
-NOTE: Recomendado o uso da classe `Mesh` para quem já tem conhecimento com Computação Gráfica ou OpenGL.
-
+NOTE: It is recommended to use the `Mesh` class for those who already know about Computer Graphics or OpenGL.
