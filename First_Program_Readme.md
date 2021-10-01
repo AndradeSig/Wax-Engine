@@ -1,10 +1,6 @@
 ### 🎮 Simple application with WaxEngine 🎮
 To start, let's create our class named `Main` which will be the main class of our application.
 <br/>
-<br/>
-
-The download of image: https://cdn.discordapp.com/attachments/837039667265142838/893558928296800256/wax_engine.png
-
 ```java
 public class SimpleApplication implements WaxModel {
 
