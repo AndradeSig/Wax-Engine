@@ -192,13 +192,28 @@ getAxis()           -> Return the Axis of yout Mesh
 ```
 
 ## 🎓 Physics
-A classe `Physics` consiste em ter funções básicas de física para o seu projeto
+The `Physics` class consists of having basic physics functions for your project
 ```java
-colliding(Collider2d first, Collider2d second)  -> Detecta colisão entre um Colisor 2D e um outro Colisor 2D
-colliding(Collider2d first, Collider2d second, float offsetX, float offsetY)  
--> Detecta colisão entre um colisor 2D e um outro colisor 2D com offsets na posição X e Y.
+colliding(Collider2d first, Collider2d second) -> Detects collision between a 2D Collider and another 2D Collider
+
+colliding(Collider2d first, Collider2d second, float offsetX, float offsetY)
+-> Detects collision between a 2D collider and another 2D collider with offsets in the X and Y position.
 ```
 
+## ⏹️ Collider2D
+A classe `Collider2D` consiste em uma classe que terá funções e referencias para um Colisor 2D
+```java
+create()    -> Cria a mesh do colisor
+debug(int mode, Vector3f color, boolean enabled)  -> faz o debug e renderiza o colisor
+destroy()   -> Faz a destruição do colisor
 
+setPosition(Vector2f position)    -> Seta uma posição para o colisor
+setScale(Vector2f scale)          -> Seta uma escala para o colisor
+
+getX()        -> Pega a posição X do colisor
+getY()        -> Pega a posição Y do colisor
+getWidth()    -> Pega a largura do colisor
+getHeight()   -> Pega a altura do colisor
+```
 
 
