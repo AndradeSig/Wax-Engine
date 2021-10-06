@@ -14,6 +14,8 @@ public class SimpleApplication implements WaxModel {
     private WaxListener listener;
     private Quad quad;
 
+    private float speed_angle;
+
     public SimpleApplication() {
         window = new WaxWindow("Simple application with WaxEngine", 800, 600);
         listener = new WaxListener();
@@ -29,7 +31,7 @@ public class SimpleApplication implements WaxModel {
 
         quad.create(Wax.STATIC);
         quad.setTexture("/res/examples/wax_engine.png", true);
-        quad.transform.scale(new Vector2f(0.4f, -0.4f));
+        quad.transform.setScale(new Vector2f(0.4f, 0.4f));
     }
 
     @Override
@@ -37,8 +39,8 @@ public class SimpleApplication implements WaxModel {
         Wax.time.run();
         window.poll();
 
-        float speed_angle = 0.5f * (float)Wax.time.DELTA_TIME;
-        quad.transform.rotate(speed_angle, new Vector3f(0.0f, 0.0f, 1.0f));
+        speed_angle += 0.5f * (float)Wax.time.DELTA_TIME;
+        quad.transform.setRotate(speed_angle, new Vector3f(0.0f, 0.0f, 1.0f));
     }
 
     @Override

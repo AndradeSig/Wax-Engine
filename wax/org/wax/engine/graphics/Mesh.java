@@ -1,5 +1,6 @@
 package org.wax.engine.graphics;
 
+import org.joml.Matrix4f;
 import org.joml.Vector3f;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL15;
@@ -20,9 +21,9 @@ public class Mesh {
 
     private Vector3f color = new Vector3f(0.0f, 0.0f, 0.0f);
 
-    public String Color_Uniform     = "";
-    public String Texture_Uniform   = "";
-    public String Transform_Uniform = "";
+    public String Color_Uniform         = "";
+    public String Texture_Uniform       = "";
+    public String Transform_Uniform     = "";
 
     public int Texture_Location         = 0;
 
@@ -112,8 +113,17 @@ public class Mesh {
     public void draw(int first, int count)
     {
         GL11.glDisable(GL11.GL_DEPTH_TEST);
+
         Shader.setColor(color, shader.getProgram(), Color_Uniform);
-        Shader.setMat4(transform.get(), shader.getProgram(), Transform_Uniform);
+
+        Matrix4f _transform = new Matrix4f();
+        transform.createTransform(_transform);
+        //  Default Transformations
+        transform.getTransform().translate(new Vector3f(transform.getX(), transform.getY(), 0.0f));
+        transform.getTransform().scale(new Vector3f(transform.getWidth(), -transform.getHeight(), 0.0f));
+        transform.getTransform().rotate(transform.getAngle(), transform.getAxis());
+        Shader.setMat4(transform.getTransform(), shader.getProgram(), Transform_Uniform);
+
         GL30.glDrawArrays(GL11.GL_TRIANGLES, first, count);
         GL11.glEnable(GL11.GL_DEPTH_TEST);
     }
@@ -121,8 +131,17 @@ public class Mesh {
     public void draw(int length)
     {
         GL11.glDisable(GL11.GL_DEPTH_TEST);
+
         Shader.setColor(color, shader.getProgram(), Color_Uniform);
-        Shader.setMat4(transform.get(), shader.getProgram(), Transform_Uniform);
+
+        Matrix4f _transform = new Matrix4f();
+        transform.createTransform(_transform);
+        //  Default Transformations
+        transform.getTransform().translate(new Vector3f(transform.getX(), transform.getY(), 0.0f));
+        transform.getTransform().scale(new Vector3f(transform.getWidth(), -transform.getHeight(), 0.0f));
+        transform.getTransform().rotate(transform.getAngle(), transform.getAxis());
+        Shader.setMat4(transform.getTransform(), shader.getProgram(), Transform_Uniform);
+
         GL30.glDrawElements(GL11.GL_TRIANGLES, length, GL11.GL_UNSIGNED_INT, 0);
         GL11.glEnable(GL11.GL_DEPTH_TEST);
     }

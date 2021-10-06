@@ -79,4 +79,9 @@ public class Shader {
             GL20.glUniformMatrix4fv(GL20.glGetUniformLocation(program, location), false, fMatBuffer);
         }
     }
+
+    public static void setVec3(Vector3f vec, int program, String location)
+    {
+        GL20.glUniform3f(GL20.glGetUniformLocation(program, location), vec.x, vec.y, vec.z);
+    }
 }

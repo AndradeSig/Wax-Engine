@@ -29,4 +29,14 @@ public class Wax {
     {
         return GLFW.glfwGetKey(window.getID(), key) == input.RELEASE;
     }
+
+    public static double mouseX(WaxWindow window)
+    {
+        return window.getMouseX();
+    }
+
+    public static double mouseY(WaxWindow window)
+    {
+        return window.getMouseY();
+    }
 }

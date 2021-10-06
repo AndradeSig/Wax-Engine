@@ -177,16 +177,18 @@ public void draw(){
 ## 🔢 Transform
 The `Transform` class is responsible for controlling the positions, scales, rotations... of your Mesh.
 ```java
-position (Vector2f position)           -> Set a new position for your mesh
-scale (Vector2f scale)                 -> Set a new scale for your Mesh
-rotate (floating angle, Vector3f axis) -> Set a new rotation for your Mesh
+createTransform(Matrix4f transform)      -> Set a new Transform to the current transform
+setPosition(Vector2f position)           -> Set a new position for your mesh
+setScale(Vector2f scale)                 -> Set a new scale for your Mesh
+setRotate(float angle, Vector3f axis)    -> Set a new rotation for your Mesh
 
-get()       -> Returns the variable that controls these transformations
-getX()      -> Return the "X" position of your Mesh
-getY()      -> Returns the "Y" position of your Mesh
-getWidth()  -> Return your Mesh Width
-getHeight() -> Returns the height of your mesh
-getAngle()  -> Return your Mesh Angle
+getTransform()       -> Returns the variable that controls these transformations
+getX()               -> Return the "X" position of your Mesh
+getY()              -> Returns the "Y" position of your Mesh
+getWidth()          -> Return your Mesh Width
+getHeight()         -> Returns the height of your mesh
+getAngle()          -> Return your Mesh Angle
+getAxis()           -> Return the Axis of yout Mesh
 ```
 
 

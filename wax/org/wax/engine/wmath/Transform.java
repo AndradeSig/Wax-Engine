@@ -1,39 +1,23 @@
 package org.wax.engine.wmath;
 
-import org.joml.Matrix4f;
-import org.joml.Vector2f;
-import org.joml.Vector3f;
+import org.joml.*;
 
 public class Transform {
 
     private Matrix4f transform = new Matrix4f();
     private float x, y;
-    private float width, height;
+    private float width = 1.0f, height = 1.0f;
     private float angle;
+    private Vector3f axis = new Vector3f(0.0f, 0.0f, 0.0f);
 
-    public Matrix4f position(Vector2f position)
+    public void createTransform(Matrix4f transform)
     {
-        this.x = position.x;
-        this.y = -position.y;
-        return transform.translate(new Vector3f(x, y, 0.0f));
-    }
-
-    public Matrix4f scale(Vector2f scale)
-    {
-        this.width  = scale.x;
-        this.height = scale.y;
-        return transform.scale(new Vector3f(width, height, 0.0f));
-    }
-
-    public Matrix4f rotate(float angle, Vector3f axis)
-    {
-        this.angle = angle;
-        return transform.rotate(this.angle, axis);
+        this.transform = transform;
     }
 
     // --------------- GETS -------------------
 
-    public Matrix4f get()
+    public Matrix4f getTransform()
     {
         return transform;
     }
@@ -61,5 +45,30 @@ public class Transform {
     public float getAngle()
     {
         return angle;
+    }
+
+    public Vector3f getAxis()
+    {
+        return axis;
+    }
+
+    // --------------- SETS ----------------
+
+    public void setPosition(Vector2f position)
+    {
+        this.x = x + position.x;
+        this.y = y - position.y;
+    }
+
+    public void setScale(Vector2f scale)
+    {
+        this.width  = scale.x;
+        this.height = scale.y;
+    }
+
+    public void setRotate(float angle, Vector3f axis)
+    {
+        this.angle = angle;
+        this.axis  = axis;
     }
 }

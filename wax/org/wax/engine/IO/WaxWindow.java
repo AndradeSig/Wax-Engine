@@ -2,6 +2,7 @@ package org.wax.engine.IO;
 
 import org.joml.Vector3f;
 import org.lwjgl.glfw.GLFW;
+import org.lwjgl.glfw.GLFWCursorPosCallback;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.glfw.GLFWWindowSizeCallback;
 import org.lwjgl.opengl.GL;
@@ -14,6 +15,8 @@ public class WaxWindow {
     private int WIDTH, HEIGHT;
     private int lastX, lastY;
     private boolean fullscreen = false;
+
+    private double mouseX, mouseY;
 
     public WaxWindow(String title, int WIDTH, int HEIGHT)
     {
@@ -46,6 +49,14 @@ public class WaxWindow {
             @Override
             public void invoke(long window, int width, int height) {
                 GL11.glViewport(0, 0, width, height);
+            }
+        });
+
+        GLFW.glfwSetCursorPosCallback(_ID, new GLFWCursorPosCallback() {
+            @Override
+            public void invoke(long window, double xpos, double ypos) {
+                mouseX = xpos;
+                mouseY = ypos;
             }
         });
 
@@ -130,5 +141,15 @@ public class WaxWindow {
     public long getID()
     {
         return _ID;
+    }
+
+    public double getMouseX()
+    {
+        return mouseX;
+    }
+
+    public double getMouseY()
+    {
+        return mouseY;
     }
 }
