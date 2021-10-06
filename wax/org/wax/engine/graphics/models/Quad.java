@@ -1,6 +1,8 @@
 package org.wax.engine.graphics.models;
 
 import org.joml.Vector3f;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL15;
 import org.wax.engine.IO.WaxUtils;
 import org.wax.engine.Wax;
 import org.wax.engine.graphics.Mesh;

@@ -4,21 +4,23 @@ import org.wax.engine.graphics.Mesh;
 import org.wax.engine.graphics.models.Quad;
 
 public class Physics {
-    public static boolean QuadCollision(Quad first, Quad second)
+    public static boolean colliding(Collider2d first, Collider2d second)
     {
-        boolean is_colliding = first.transform.getX() + first.transform.getWidth() > second.transform.getX() &&
-                first.transform.getX() < second.transform.getX() + second.transform.getWidth() &&
-                first.transform.getY() + first.transform.getHeight() > second.transform.getY() &&
-                first.transform.getY() < second.transform.getY() + second.transform.getHeight();
+        boolean is_colliding =
+                first.getX() + first.getWidth() > second.getX() &&
+                first.getX() < second.getX() + second.getWidth() &&
+                first.getY() + first.getHeight() > second.getY() &&
+                first.getY() < second.getY() + second.getHeight();
         return is_colliding;
     }
 
-    public static boolean MeshCollision(Mesh first, Mesh second)
+    public static boolean colliding(Collider2d first, Collider2d second, float offsetX, float offsetY)
     {
-        boolean is_colliding = first.transform.getX() + first.transform.getWidth() > second.transform.getX() &&
-                first.transform.getX() < second.transform.getX() + second.transform.getWidth() &&
-                first.transform.getY() + first.transform.getHeight() > second.transform.getY() &&
-                first.transform.getY() < second.transform.getY() + second.transform.getHeight();
+        boolean is_colliding =
+                first.getX() + first.getWidth() + offsetX > second.getX() &&
+                first.getX() + offsetX < second.getX() + second.getWidth() &&
+                first.getY() + first.getHeight() + offsetY > second.getY() &&
+                first.getY() + offsetY < second.getY() + second.getHeight();
         return is_colliding;
     }
 }

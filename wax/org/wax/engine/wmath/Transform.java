@@ -54,10 +54,16 @@ public class Transform {
 
     // --------------- SETS ----------------
 
+    public void setMovement(Vector2f offmove)
+    {
+        this.x = x + offmove.x;
+        this.y = y + offmove.y;
+    }
+
     public void setPosition(Vector2f position)
     {
-        this.x = x + position.x;
-        this.y = y - position.y;
+        this.x = position.x;
+        this.y = position.y;
     }
 
     public void setScale(Vector2f scale)

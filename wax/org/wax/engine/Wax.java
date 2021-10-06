@@ -12,6 +12,9 @@ public class Wax {
     public static int STATIC    = 0x88E4;
     public static int DYNAMIC   = 0x88E8;
     public static int RGBA      = 4;
+    public static int POINT     = 0x1B00;
+    public static int LINE      = 0x1B01;
+    public static int FILL      = 0x1B02;
 
     //  --------------------- OBJECTS -----------------------
     public static Time time         = new Time();
