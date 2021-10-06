@@ -191,6 +191,15 @@ getAngle()          -> Return your Mesh Angle
 getAxis()           -> Return the Axis of yout Mesh
 ```
 
+## 🎓 Physics
+A classe `Physics` consiste em ter funções básicas de física para o seu projeto
+```java
+colliding(Collider2d first, Collider2d second)  -> Detecta colisão entre um Colisor 2D e um outro Colisor 2D
+colliding(Collider2d first, Collider2d second, float offsetX, float offsetY)  -> Detecta colisão 
+                                                                                 entre um colisor 2D e um outro colisor 2D
+                                                                                 com offsets na posição X e Y.
+```
+
 
 
 
