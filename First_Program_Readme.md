@@ -41,7 +41,7 @@ private WaxWindow window;
 private WaxListener listener;
 private Quad quad;
 
-private float angle_speed;
+private float speed_angle;
 
 public SimpleApplication(){
     window = new WaxWindow("Simple application with WaxEngine!", 800, 600);
@@ -130,13 +130,13 @@ For us to do the rotation, it's very simple!:
 @Override
 public void update(){
     (...)
-    angle_speed += 0.5f * (float)Wax.time.DELTA_TIME;
-    quad.transform.setRotate(angle_speed, new Vector3f(0.0f, 0.0f, 1.0f));
+    speed_angle += 0.5f * (float)Wax.time.DELTA_TIME;
+    quad.transform.setRotate(speed_angle, new Vector3f(0.0f, 0.0f, 1.0f));
 }
 ```
 `Wax.time.DELTA_TIME` represents the value between the current and past time of our application. It is very good and recommended to use for values ​​that will be updated every frame and that will have to run according to different types of computers. As we know, computers are not the same, so some will have a slower game than the other. In order not to slow down the game than a turtle on earth, we've multiplied the value that will be constantly updated by the value in Delta.
 <br/>
-`quad.transform.setRotate(angle_speed, new Vector3f(0.0f, 0.0f, 1.0f))` does the rotation of our square/mesh. Having the last parameter asking for the axis it will be rotated on. Since we're working with 2D, we'll only rotate on the Z Axis, but feel free to experiment by setting on any axis.
+`quad.transform.setRotate(speed_angle, new Vector3f(0.0f, 0.0f, 1.0f))` does the rotation of our square/mesh. Having the last parameter asking for the axis it will be rotated on. Since we're working with 2D, we'll only rotate on the Z Axis, but feel free to experiment by setting on any axis.
 <br/>
 <br/>
 After that when you run you will see a beautiful rotating square :)
