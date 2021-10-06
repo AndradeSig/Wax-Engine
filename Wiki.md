@@ -201,19 +201,20 @@ colliding(Collider2d first, Collider2d second, float offsetX, float offsetY)
 ```
 
 ## ⏹️ Collider2D
-A classe `Collider2D` consiste em uma classe que terá funções e referencias para um Colisor 2D
+The `Collider2D` class consists of a class that will have functions and references to a 2D Collider
 ```java
-create()    -> Cria a mesh do colisor
-debug(int mode, Vector3f color, boolean enabled)  -> faz o debug e renderiza o colisor
-destroy()   -> Faz a destruição do colisor
+create()                                         -> Create collider mesh
+debug(int mode, Vector3f color, boolean enabled) -> debug and render collider
+destroy()                                        -> Does the collider destroy
 
-setPosition(Vector2f position)    -> Seta uma posição para o colisor
-setScale(Vector2f scale)          -> Seta uma escala para o colisor
+setPosition(Vector2f position)                  -> Sets a position for the collider
+setScale(Vector2f scale)                        -> Sets a scale for the collider
 
-getX()        -> Pega a posição X do colisor
-getY()        -> Pega a posição Y do colisor
-getWidth()    -> Pega a largura do colisor
-getHeight()   -> Pega a altura do colisor
+getX()                                          -> Get the X position of the collider
+getY()                                          -> Get the Y position of the collider
+getWidth()                                      -> Get the collider width
+getHeight()                                     -> Get collider height
 ```
+
 
 
