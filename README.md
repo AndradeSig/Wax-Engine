@@ -11,7 +11,7 @@ The WaxEngine was created to facilitate your process in creating a game, so that
 Yes! It's pretty easy, with a little reading you'll understand WaxEngine and you'll be able to create your games freely 😄
 
 # Instalation
-➡️ [(Install the WaxEngine here)](https://github.com/AndradeSig/WaxEngine/releases/download/Lib/WaxEngine.jar)
+➡️ [(Install the WaxEngine here)](https://github.com/AndradeSig/Wax-Engine/releases/download/Lib/WaxEngine.jar)
 <br/>
 To put it in your project, just add the installed `.jar` file and add it to the project as a library.
 
