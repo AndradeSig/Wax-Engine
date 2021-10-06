@@ -41,6 +41,8 @@ private WaxWindow window;
 private WaxListener listener;
 private Quad quad;
 
+private float angle_speed;
+
 public SimpleApplication(){
     window = new WaxWindow("Simple application with WaxEngine!", 800, 600);
     listener = new WaxListener();
@@ -65,14 +67,14 @@ public void start(){
     
     quad.create(Wax.STATIC);
     quad.setTexture("/res/examples/wax_engine.png", true);
-    quad.transform.scale(new Vector2f(0.4f, -0.4f));
+    quad.transform.setScale(new Vector2f(0.4f, 0.4f));
 }
 ```
 `window.setVsync(true)` enables vsync and locks frames per second.
 <br/>
 `quad.create(Wax.STATIC)` creates the mesh of our square with a static shape(STATIC). The variable that stores the value for Static is in the Wax class, and that's why we access it.
 <br/>
-`quad.transform.scale(new Vector2f(0.4f, -0.4f))` sets a scale for our square. The number `-0.4f` is negative to give us an effect that the square is face down.
+`quad.transform.setScale(new Vector2f(0.4f, -0.4f))` sets a scale for our square/mesh.
 <br/>
 <br/>
 After that we need to update and render things.
@@ -128,13 +130,13 @@ For us to do the rotation, it's very simple!:
 @Override
 public void update(){
     (...)
-    float angle_speed = 0.5f * (float)Wax.time.DELTA_TIME;
-    quad.transform.rotate(angle_speed, new Vector3f(0.0f, 0.0f, 1.0f));
+    angle_speed += 0.5f * (float)Wax.time.DELTA_TIME;
+    quad.transform.setRotate(angle_speed, new Vector3f(0.0f, 0.0f, 1.0f));
 }
 ```
 `Wax.time.DELTA_TIME` represents the value between the current and past time of our application. It is very good and recommended to use for values ​​that will be updated every frame and that will have to run according to different types of computers. As we know, computers are not the same, so some will have a slower game than the other. In order not to slow down the game than a turtle on earth, we've multiplied the value that will be constantly updated by the value in Delta.
 <br/>
-`quad.transform.rotate(angle_speed, new Vector3f(0.0f, 0.0f, 1.0f))` does the rotation of our square. Having the last parameter asking for the axis it will be rotated on. Since we're working with 2D, we'll only rotate on the Z Axis, but feel free to experiment by setting on any axis.
+`quad.transform.setRotate(angle_speed, new Vector3f(0.0f, 0.0f, 1.0f))` does the rotation of our square/mesh. Having the last parameter asking for the axis it will be rotated on. Since we're working with 2D, we'll only rotate on the Z Axis, but feel free to experiment by setting on any axis.
 <br/>
 <br/>
 After that when you run you will see a beautiful rotating square :)
