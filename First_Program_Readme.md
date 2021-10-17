@@ -71,7 +71,8 @@ public void start(){
     quad.transform.setScale(new Vector2f(0.4f, 0.4f));
 }
 ```
-`window.setLocation(Wax.CENTERED)` will set the Window's location to the center
+`window.setLocation(Wax.CENTERED)` will set the Window's location to the center.
+<br/>
 `window.setVsync(true)` enables vsync and locks frames per second.
 <br/>
 `quad.create(Wax.STATIC)` creates the mesh of our square with a static shape(STATIC). The variable that stores the value for Static is in the Wax class, and that's why we access it.
