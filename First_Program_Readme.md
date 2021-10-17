@@ -62,7 +62,7 @@ After that, we'll make some important settings:
 ```java
 @Override
 public void start(){
-    window.setLocation(Wax.CENTERED);
+    window.setLocation(Wax.CENTRALIZED);
     window.initialize();
     window.setVsync(true);
     
@@ -71,7 +71,7 @@ public void start(){
     quad.transform.setScale(new Vector2f(0.4f, 0.4f));
 }
 ```
-`window.setLocation(Wax.CENTERED)` will set the Window's location to the center.
+`window.setLocation(Wax.CENTRALIZED)` will set the Window's location to the center.
 <br/>
 `window.setVsync(true)` enables vsync and locks frames per second.
 <br/>
