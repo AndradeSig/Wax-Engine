@@ -1,7 +1,7 @@
 # 🍵 Wax Engine 🍵
 💫 A simple, and fast Game Engine for Java.
 <br/>
-🥊 Current version: 0.0.2
+🥊 Current version: 0.0.4
 
 ### What's it?
 ⚙️ WaxEngine is an engine for Java, using LWJGL 3 and GLFW.
