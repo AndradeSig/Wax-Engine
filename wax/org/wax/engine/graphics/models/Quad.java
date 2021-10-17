@@ -71,4 +71,11 @@ public class Quad {
     {
         mesh.setTexture(path, enable);
     }
+
+    // -------------------- GETS ----------------------
+
+    public Mesh getMesh()
+    {
+        return mesh;
+    }
 }

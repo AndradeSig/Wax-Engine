@@ -10,10 +10,14 @@ import org.lwjgl.opengl.GL11;
 
 public class WaxWindow {
 
+    private GLFWVidMode vidMode;
+
     private long _ID;
     private String title;
     private int WIDTH, HEIGHT;
     private int lastX, lastY;
+    private int location = 0;
+    private boolean resizable = true;
     private boolean fullscreen = false;
 
     private double mouseX, mouseY;
@@ -28,20 +32,37 @@ public class WaxWindow {
     public void initialize()
     {
         if(!GLFW.glfwInit())
-            throw new IllegalArgumentException("The GLFW doens't initialized. For more informations, visit: https://github.com/andradesig");
+            throw new IllegalArgumentException("The GLFW doens't initialized. For more informations, visit: https://github.com/andradesig/Wax-Engine");
         GLFW.glfwWindowHint(GLFW.GLFW_CONTEXT_VERSION_MAJOR, 3);
         GLFW.glfwWindowHint(GLFW.GLFW_CONTEXT_VERSION_MINOR, 3);
+
+        GLFW.glfwWindowHint(GLFW.GLFW_RESIZABLE, resizable ? GLFW.GLFW_TRUE : GLFW.GLFW_FALSE);
+
         GLFW.glfwWindowHint(GLFW.GLFW_OPENGL_PROFILE, GLFW.GLFW_OPENGL_CORE_PROFILE);
         GLFW.glfwWindowHint(GLFW.GLFW_OPENGL_FORWARD_COMPAT, GLFW.GLFW_TRUE);
 
         _ID = GLFW.glfwCreateWindow(WIDTH, HEIGHT, title, 0, 0);
         if(_ID == 0)
-            throw new IllegalArgumentException("The Window doens't initialized. For more informations, visit: https://github.com/andradesig");
+            throw new IllegalArgumentException("The Window doens't initialized. For more informations, visit: https://github.com/andradesig/Wax-Engine");
 
-        GLFWVidMode vMode = GLFW.glfwGetVideoMode(GLFW.glfwGetPrimaryMonitor());
-        lastX =  (vMode.width() - WIDTH)/2;
-        lastY = (vMode.height() - HEIGHT)/2;
-        GLFW.glfwSetWindowPos(_ID, (vMode.width() - WIDTH)/2, (vMode.height() - HEIGHT)/2);
+        vidMode = GLFW.glfwGetVideoMode(GLFW.glfwGetPrimaryMonitor());
+
+        switch(location){
+            case 0:
+                lastX = 0;
+                lastY = 0;
+                break;
+            case 1:
+                lastX =  (vidMode.width() - WIDTH)/2;
+                lastY =  (vidMode.height() - HEIGHT)/2;
+                break;
+            case -1:
+                lastX = (int)Math.floor(Math.random() * vidMode.width()/2);
+                lastY = (int)Math.floor(Math.random() * vidMode.height()/2);
+                break;
+        }
+
+        GLFW.glfwSetWindowPos(_ID, lastX, lastY);
 
         GLFW.glfwMakeContextCurrent(_ID);
 
@@ -115,15 +136,38 @@ public class WaxWindow {
         GLFW.glfwSetWindowShouldClose(_ID, close);
     }
 
+    public void setResolution(int width, int height)
+    {
+        this.WIDTH = width;
+        this.HEIGHT = height;
+        GL11.glViewport(0, 0, WIDTH, HEIGHT);
+    }
+
+    public void setSize(int width, int height)
+    {
+        this.WIDTH = width;
+        this.HEIGHT = height;
+        GLFW.glfwSetWindowSize(_ID, WIDTH, HEIGHT);
+        GLFW.glfwSetWindowPos(_ID, lastX, lastY);
+    }
+
     public void setFullscreen(boolean fullscreen)
     {
         this.fullscreen = fullscreen;
-        if(fullscreen){
-            GLFWVidMode vidMode = GLFW.glfwGetVideoMode(GLFW.glfwGetPrimaryMonitor());
-            GLFW.glfwSetWindowMonitor(_ID, GLFW.glfwGetPrimaryMonitor(), 0, 0, vidMode.width(), vidMode.height(), 0);
-        }else{
+        if(fullscreen)
+            GLFW.glfwSetWindowMonitor(_ID, GLFW.glfwGetPrimaryMonitor(), 0, 0, WIDTH, HEIGHT, 0);
+        else
             GLFW.glfwSetWindowMonitor(_ID, 0, lastX, lastY, WIDTH, HEIGHT, 0);
-        }
+    }
+
+    public boolean setResizable(boolean resizable)
+    {
+        return this.resizable = resizable;
+    }
+
+    public int setLocation(int location)
+    {
+        return this.location = location;
     }
 
     // ---------------------- GETS -----------------------
@@ -136,6 +180,21 @@ public class WaxWindow {
     public boolean isFullscreen()
     {
         return fullscreen;
+    }
+
+    public boolean isResizable()
+    {
+        return resizable;
+    }
+
+    public int getMonitorWidth()
+    {
+        return vidMode.width();
+    }
+
+    public int getMonitorHeight()
+    {
+        return vidMode.height();
     }
 
     public long getID()
