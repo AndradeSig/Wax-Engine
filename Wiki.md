@@ -38,13 +38,21 @@ clearColor(R, G, B)           -> Clears the window with a specified color in RGB
 swap()                        -> Swap Window buffers for rendering
 destroy()                     -> Destroy the Window
 
+setResizable(boolean resizable) -> Set your window resizable or not resizable
 setVsync(true or false)       -> Enable or Disable the Vsync option
 setClosed(true or false)      -> Enables or Disables the Window closed and open state
 setFullscreen(true or false)  -> Enable or Disable Window Full Screen option
+setResolution(int width, int height)  -> Set a new Resolution for your Window
+setSize(int width, int height)        -> Set a new Size for yout window
 
 isOpen()                      -> Check if the Window is open
 isFullscreen()                -> Check if Window is full screen
 getID()                       -> Gets the Window ID, which is added when created.
+isResizable()                 -> Check if Window is resizable
+getMonitorWidth()             -> Get the Width of your Monitor
+getMonitorHeight()            -> Get the Height of your Monitor
+getMouseX()                   -> Get the X position of your mouse
+getMouseY()                   -> Get the Y position of yout mouse
 
 ```
 
