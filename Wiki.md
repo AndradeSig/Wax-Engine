@@ -38,7 +38,7 @@ clearColor(R, G, B)           -> Clears the window with a specified color in RGB
 swap()                        -> Swap Window buffers for rendering
 destroy()                     -> Destroy the Window
 
-setResizable(boolean resizable) -> Set your window resizable or not resizable
+setResizable(true or false)   -> Enable or Disable the Resizable option
 setVsync(true or false)       -> Enable or Disable the Vsync option
 setClosed(true or false)      -> Enables or Disables the Window closed and open state
 setFullscreen(true or false)  -> Enable or Disable Window Full Screen option
