@@ -44,6 +44,7 @@ setClosed(true or false)      -> Enables or Disables the Window closed and open 
 setFullscreen(true or false)  -> Enable or Disable Window Full Screen option
 setResolution(int width, int height)  -> Set a new Resolution for your Window
 setSize(int width, int height)        -> Set a new Size for yout window
+setLocation(int location)             -> Set a new location for your window
 
 isOpen()                      -> Check if the Window is open
 isFullscreen()                -> Check if Window is full screen
